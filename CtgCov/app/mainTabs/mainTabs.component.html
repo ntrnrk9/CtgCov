@@ -16,10 +16,6 @@
 </div>
 <br />
 <div class="container">
-    <home-page></home-page>
-    <yard-mang-page></yard-mang-page>
-    <pool-mang-page></pool-mang-page>
-    <allocation-page></allocation-page>
     <div [ngSwitch]="toShowTab">
         <home-page *ngSwitchCase=1></home-page>
         <allocation-page *ngSwitchCase=2></allocation-page>
