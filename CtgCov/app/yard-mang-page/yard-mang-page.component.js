@@ -7,21 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var MainTabsComponent = (function () {
-    function MainTabsComponent() {
-        this.toShowTab = 1;
-        this.name = 'MainTabsComponent';
+var YardMangPageComponent = (function () {
+    function YardMangPageComponent() {
+        this.name = 'YardMang-pageComponent';
     }
-    return MainTabsComponent;
+    return YardMangPageComponent;
 }());
-MainTabsComponent = __decorate([
+YardMangPageComponent = __decorate([
     core_1.Component({
-        selector: 'mainTabs',
-        templateUrl: 'mainTabs.component.html',
-        styleUrls: ['mainTabs.component.css'],
+        selector: 'yard-mang-page',
+        templateUrl: 'yard-mang-page.component.html',
+        styleUrls: ['yard-mang-page.component.css'],
         moduleId: module.id
     })
-], MainTabsComponent);
-exports.MainTabsComponent = MainTabsComponent;
+], YardMangPageComponent);
+exports.YardMangPageComponent = YardMangPageComponent;
 // This code copy to app.module.ts
-//# sourceMappingURL=mainTabs.component.js.map
+//# sourceMappingURL=yard-mang-page.component.js.map

@@ -83,6 +83,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\allocation-page\allocation-page.component.css" />
+    <Content Include="app\allocation-page\allocation-page.component.html" />
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
     <Content Include="app\footer\footer.component.css" />
@@ -95,6 +97,12 @@
     <Content Include="app\home-page\home-page.component.html" />
     <Content Include="app\mainTabs\mainTabs.component.css" />
     <Content Include="app\mainTabs\mainTabs.component.html" />
+    <Content Include="app\pool-mang-page\pool-mang-page.component.css" />
+    <Content Include="app\pool-mang-page\pool-mang-page.component.html" />
+    <Content Include="app\table\table.component.css" />
+    <Content Include="app\table\table.component.html" />
+    <Content Include="app\yard-mang-page\yard-mang-page.component.css" />
+    <Content Include="app\yard-mang-page\yard-mang-page.component.html" />
     <Content Include="assets\images\01.jpg" />
     <Content Include="assets\images\02.jpg" />
     <Content Include="assets\images\03.jpg" />
@@ -180,6 +188,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\allocation-page\allocation-page.component.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\footer\footer.component.ts" />
@@ -188,6 +197,9 @@
     <TypeScriptCompile Include="app\home-page\home-page.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\mainTabs\mainTabs.component.ts" />
+    <TypeScriptCompile Include="app\pool-mang-page\pool-mang-page.component.ts" />
+    <TypeScriptCompile Include="app\table\table.component.ts" />
+    <TypeScriptCompile Include="app\yard-mang-page\yard-mang-page.component.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

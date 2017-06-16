@@ -18,6 +18,10 @@ var header_component_1 = require("./header/header.component");
 var mainTabs_component_1 = require("./mainTabs/mainTabs.component");
 var home_page_component_1 = require("./home-page/home-page.component");
 var gmaps_component_1 = require("./gmaps/gmaps.component");
+var yard_mang_page_component_1 = require("./yard-mang-page/yard-mang-page.component");
+var table_component_1 = require("./table/table.component");
+var pool_mang_page_component_1 = require("./pool-mang-page/pool-mang-page.component");
+var allocation_page_component_1 = require("./allocation-page/allocation-page.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +33,10 @@ AppModule = __decorate([
             core_2.AgmCoreModule.forRoot({
                 apiKey: 'AIzaSyAafsMtGWbhgmfXU1TV-K-VUh8y1d8jZjI'
             })],
-        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent, header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent, home_page_component_1.HomePageComponent, gmaps_component_1.GmapsComponent],
+        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent,
+            header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent,
+            home_page_component_1.HomePageComponent, gmaps_component_1.GmapsComponent,
+            yard_mang_page_component_1.YardMangPageComponent, table_component_1.TableComponent, allocation_page_component_1.AllocationPageComponent, pool_mang_page_component_1.PoolMangPageComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

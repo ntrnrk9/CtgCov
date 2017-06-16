@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     moduleId: module.id
 })
 export class MainTabsComponent {
+    toShowTab = 1;
     private name = 'MainTabsComponent';
 }
 
