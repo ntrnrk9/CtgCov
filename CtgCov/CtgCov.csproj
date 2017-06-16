@@ -85,6 +85,8 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
+    <Content Include="app\header\header.component.css" />
+    <Content Include="app\header\header.component.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
@@ -121,6 +123,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\header\header.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <PropertyGroup>

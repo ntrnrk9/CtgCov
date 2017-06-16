@@ -6,23 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
-var app_component_1 = require("./app.component");
-var http_1 = require("@angular/http");
-//import { FooterComponent } from './footer/footer.component';
-var header_component_1 = require("./header/header.component");
-var AppModule = (function () {
-    function AppModule() {
+var HeaderComponent = (function () {
+    function HeaderComponent() {
+        this.name = 'HeaderComponent';
     }
-    return AppModule;
+    return HeaderComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, header_component_1.HeaderComponent],
-        bootstrap: [app_component_1.AppComponent]
+HeaderComponent = __decorate([
+    core_1.Component({
+        selector: 'header',
+        templateUrl: 'header.component.html',
+        styleUrls: ['header.component.css'],
+        moduleId: module.id
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], HeaderComponent);
+exports.HeaderComponent = HeaderComponent;
+// This code copy to app.module.ts
+//# sourceMappingURL=header.component.js.map
