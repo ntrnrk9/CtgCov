@@ -14,6 +14,7 @@ var footer_component_1 = require("./footer/footer.component");
 var header_component_1 = require("./header/header.component");
 var mainTabs_component_1 = require("./mainTabs/mainTabs.component");
 var home_page_component_1 = require("./home-page/home-page.component");
+var gmaps_component_1 = require("./gmaps/gmaps.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent, header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent, home_page_component_1.HomePageComponent],
+        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent, header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent, home_page_component_1.HomePageComponent, gmaps_component_1.GmapsComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

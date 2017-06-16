@@ -87,6 +87,8 @@
     <Content Include="app\app.component.html" />
     <Content Include="app\footer\footer.component.css" />
     <Content Include="app\footer\footer.component.html" />
+    <Content Include="app\gmaps\gmaps.component.css" />
+    <Content Include="app\gmaps\gmaps.component.html" />
     <Content Include="app\header\header.component.css" />
     <Content Include="app\header\header.component.html" />
     <Content Include="app\home-page\home-page.component.css" />
@@ -181,6 +183,7 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\footer\footer.component.ts" />
+    <TypeScriptCompile Include="app\gmaps\gmaps.component.ts" />
     <TypeScriptCompile Include="app\header\header.component.ts" />
     <TypeScriptCompile Include="app\home-page\home-page.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
