@@ -89,6 +89,8 @@
     <Content Include="app\footer\footer.component.html" />
     <Content Include="app\header\header.component.css" />
     <Content Include="app\header\header.component.html" />
+    <Content Include="app\mainTabs\mainTabs.component.css" />
+    <Content Include="app\mainTabs\mainTabs.component.html" />
     <Content Include="assets\images\01.jpg" />
     <Content Include="assets\images\02.jpg" />
     <Content Include="assets\images\03.jpg" />
@@ -179,6 +181,7 @@
     <TypeScriptCompile Include="app\footer\footer.component.ts" />
     <TypeScriptCompile Include="app\header\header.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\mainTabs\mainTabs.component.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

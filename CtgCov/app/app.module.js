@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
 var footer_component_1 = require("./footer/footer.component");
 var header_component_1 = require("./header/header.component");
+var mainTabs_component_1 = require("./mainTabs/mainTabs.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent, header_component_1.HeaderComponent],
+        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent, header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
