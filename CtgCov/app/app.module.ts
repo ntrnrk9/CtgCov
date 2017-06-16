@@ -5,12 +5,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 
-//import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     imports: [BrowserModule, HttpModule ],
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
