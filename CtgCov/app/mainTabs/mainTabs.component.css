@@ -2,3 +2,28 @@
     font-size: 300%;
     color: #34495e;
 }
+
+.selected {
+    color: white !important;
+    background: #00264B;
+}
+
+.selected-a{
+    color: white !important;
+    background: #00264B;
+}
+.tab-li-last {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px
+}
+.tab-li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 2px solid #00264B;
+}
+
+a {
+    text-decoration: none;
+}

@@ -17,16 +17,19 @@ import { YardMangPageComponent } from './yard-mang-page/yard-mang-page.component
 import { TableComponent } from './table/table.component';
 import { PoolMangPageComponent } from './pool-mang-page/pool-mang-page.component';
 import { AllocationPageComponent } from './allocation-page/allocation-page.component';
-
+import { Pool1MangPageComponent } from './pool1-mang-page/pool1-mang-page.component';
+import { Footer1Component } from './footer1/footer1.component';
 @NgModule({
     imports: [BrowserModule, HttpModule, CommonModule, FormsModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyAafsMtGWbhgmfXU1TV-K-VUh8y1d8jZjI'
         })],
-    declarations: [AppComponent, FooterComponent,
+    declarations: [AppComponent,
         HeaderComponent, MainTabsComponent,
         HomePageComponent, GmapsComponent,
-        YardMangPageComponent, TableComponent, AllocationPageComponent, PoolMangPageComponent],
+        YardMangPageComponent, TableComponent,
+        AllocationPageComponent, PoolMangPageComponent,
+        Pool1MangPageComponent, Footer1Component],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

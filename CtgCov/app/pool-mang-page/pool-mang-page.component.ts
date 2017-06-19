@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     moduleId: module.id
 })
 export class PoolMangPageComponent {
-    private name = 'PoolMang-pageComponent';
+    private name = 'PoolMangPageComponent';
 }
 
 // This code copy to app.module.ts

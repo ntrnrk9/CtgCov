@@ -1,0 +1,37 @@
+﻿h1 {
+    font-size: 300%;
+    color: #34495e;
+}
+
+.app-table {
+    width: 100%;
+}
+
+.app-table-tr {
+    padding: 15px;
+}
+
+.app-table tr {
+    height: 45px;
+    padding: 10px;
+}
+
+.serch-gly {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 2;
+    border-left: 1px solid #b3d4fc;
+    padding-left: 8px;
+}
+
+.ctg-textbox {
+    border: none;
+    padding: 10px;
+    height:30px;
+}
+
+.action{
+    border:none;
+    background:white;
+}

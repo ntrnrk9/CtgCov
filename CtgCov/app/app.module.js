@@ -13,7 +13,6 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
 var core_2 = require("@agm/core");
-var footer_component_1 = require("./footer/footer.component");
 var header_component_1 = require("./header/header.component");
 var mainTabs_component_1 = require("./mainTabs/mainTabs.component");
 var home_page_component_1 = require("./home-page/home-page.component");
@@ -22,6 +21,8 @@ var yard_mang_page_component_1 = require("./yard-mang-page/yard-mang-page.compon
 var table_component_1 = require("./table/table.component");
 var pool_mang_page_component_1 = require("./pool-mang-page/pool-mang-page.component");
 var allocation_page_component_1 = require("./allocation-page/allocation-page.component");
+var pool1_mang_page_component_1 = require("./pool1-mang-page/pool1-mang-page.component");
+var footer1_component_1 = require("./footer1/footer1.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,10 +34,12 @@ AppModule = __decorate([
             core_2.AgmCoreModule.forRoot({
                 apiKey: 'AIzaSyAafsMtGWbhgmfXU1TV-K-VUh8y1d8jZjI'
             })],
-        declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent,
+        declarations: [app_component_1.AppComponent,
             header_component_1.HeaderComponent, mainTabs_component_1.MainTabsComponent,
             home_page_component_1.HomePageComponent, gmaps_component_1.GmapsComponent,
-            yard_mang_page_component_1.YardMangPageComponent, table_component_1.TableComponent, allocation_page_component_1.AllocationPageComponent, pool_mang_page_component_1.PoolMangPageComponent],
+            yard_mang_page_component_1.YardMangPageComponent, table_component_1.TableComponent,
+            allocation_page_component_1.AllocationPageComponent, pool_mang_page_component_1.PoolMangPageComponent,
+            pool1_mang_page_component_1.Pool1MangPageComponent, footer1_component_1.Footer1Component],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

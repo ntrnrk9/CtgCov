@@ -7,20 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var PoolMangPageComponent = (function () {
-    function PoolMangPageComponent() {
-        this.name = 'PoolMangPageComponent';
+var Footer1Component = (function () {
+    function Footer1Component() {
+        this.name = 'Footer1Component';
     }
-    return PoolMangPageComponent;
+    return Footer1Component;
 }());
-PoolMangPageComponent = __decorate([
+Footer1Component = __decorate([
     core_1.Component({
-        selector: 'pool-mang-page',
-        templateUrl: 'pool-mang-page.component.html',
-        styleUrls: ['pool-mang-page.component.css'],
+        selector: 'footer1',
+        templateUrl: 'footer1.component.html',
+        styleUrls: ['footer1.component.css'],
         moduleId: module.id
     })
-], PoolMangPageComponent);
-exports.PoolMangPageComponent = PoolMangPageComponent;
+], Footer1Component);
+exports.Footer1Component = Footer1Component;
 // This code copy to app.module.ts
-//# sourceMappingURL=pool-mang-page.component.js.map
+//# sourceMappingURL=footer1.component.js.map
