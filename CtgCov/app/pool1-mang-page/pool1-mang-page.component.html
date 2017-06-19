@@ -1,16 +1,23 @@
 ﻿<div class="" style="border: 1px solid silver">
     <div class="row">
         <div class="col-md-12">
-            <div style="background: #b3d4fc;padding:5px;">
-                <input class="ctg-textbox" placeholder="Search by state"  /><span class="glyphicon glyphicon-search serch-gly"></span>
-                <input class="ctg-textbox" placeholder="Search by city" style="margin-left:10px;" /><span class="glyphicon glyphicon-search serch-gly"></span>
-                <input class="ctg-textbox" placeholder="Company/Customer" style="margin-left:10px;" /><span class="glyphicon glyphicon-search serch-gly"></span>
-                <input class="ctg-textbox" placeholder="Pools having variance" style="margin-left:10px;" /><span class="glyphicon glyphicon-search serch-gly"></span>
+            <div style="background: #b3d4fc;padding:5px;height:40px">
+                <input class="ctg-textbox pull-left" placeholder="Search by state" [(ngModel)]="stateFil"/><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
+                <input class="ctg-textbox pull-left" placeholder="Search by city" [(ngModel)]="cityFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
+                <input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
+                <select class="form-control pull-left pm-select" id="sel1" [ngModel]="selectedVarience" (ngModelChange)="selectVarience($event)">
+                    <option value=1>Pools having variance</option>
+                    <option value=0>Pools having no variance</option>
+                    <option value=-1>All pools</option>
+                </select>
+
             </div>
-        </div>
+        <!--</div>
+        <div>asdf<a>{{stateFil}}</a><a>{{cityFil}}</a><a>{{ccFil}}</a>
+        </div>-->
         <div class="col-md-12">
             <div style="background: white;">
-                <h5 style="padding:15px;margin:0px;font-weight:bold">Yard Management</h5>
+                <h5 style="padding:15px;margin:0px;font-weight:bold">Pool List</h5>
             </div>
         </div>
         <div class="col-md-12">
@@ -21,15 +28,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let row of config.rows">
-                        <td style="text-align:center" *ngFor="let val of row">
-                            <span>{{val}}</span>
-                        </td>
-                        <td style="text-align:center">
-                            <button class="action"><span class="glyphicon glyphicon-edit"></span></button>
-                            <button class="action"><span class="glyphicon glyphicon-play"></span></button>
-                        </td>
-                    </tr>
+                        <tr *ngFor="let item of data| filterC:cityFil:'city'| filterC:stateFil:'state'| filterC:ccFil:'company'">
+                            <td style="text-align:center">
+                                <span>{{item.state}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.city}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.csr}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.planner}}</span>
+                            </td>
+                            <td style="text-align:center">
+
+                                <span>{{item.company}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.twm}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.reqPool}}</span>
+                            </td>
+
+                            <td style="text-align:center">
+                                <span>{{item.curr}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.variance}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <button class="action"><span class="glyphicon glyphicon-edit"></span></button>
+                                <button class="action"><span class="glyphicon glyphicon-play"></span></button>
+                            </td>
+                        </tr>
                 </tbody>
             </table>
         </div>

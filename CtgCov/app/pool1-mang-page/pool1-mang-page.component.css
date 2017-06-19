@@ -5,6 +5,7 @@
 
 .app-table {
     width: 100%;
+    margin-bottom:0px;
 }
 
 .app-table-tr {
@@ -33,5 +34,12 @@
 
 .action{
     border:none;
-    background:white;
+    background:transparent;
+}
+
+.pm-select {
+    width: auto;
+    margin-left: 10px;
+    height: 31px;
+    border-radius: 0px;
 }

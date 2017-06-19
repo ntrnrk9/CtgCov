@@ -19,6 +19,9 @@ import { PoolMangPageComponent } from './pool-mang-page/pool-mang-page.component
 import { AllocationPageComponent } from './allocation-page/allocation-page.component';
 import { Pool1MangPageComponent } from './pool1-mang-page/pool1-mang-page.component';
 import { Footer1Component } from './footer1/footer1.component';
+
+import { FilterCPipe } from './Filters/filterC.pipe';
+
 @NgModule({
     imports: [BrowserModule, HttpModule, CommonModule, FormsModule,
         AgmCoreModule.forRoot({
@@ -29,7 +32,8 @@ import { Footer1Component } from './footer1/footer1.component';
         HomePageComponent, GmapsComponent,
         YardMangPageComponent, TableComponent,
         AllocationPageComponent, PoolMangPageComponent,
-        Pool1MangPageComponent, Footer1Component],
+        Pool1MangPageComponent, Footer1Component,
+        FilterCPipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

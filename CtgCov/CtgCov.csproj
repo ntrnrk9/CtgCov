@@ -195,6 +195,7 @@
     <TypeScriptCompile Include="app\allocation-page\allocation-page.component.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\Filters\filterC.pipe.ts" />
     <TypeScriptCompile Include="app\footer1\footer1.component.ts" />
     <TypeScriptCompile Include="app\footer\footer.component.ts" />
     <TypeScriptCompile Include="app\gmaps\gmaps.component.ts" />
