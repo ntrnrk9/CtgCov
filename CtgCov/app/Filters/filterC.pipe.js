@@ -15,7 +15,11 @@ var FilterCPipe = (function () {
         if (param === undefined || key === undefined) {
             return objects;
         }
-        return objects.filter(function (item) { console.log(key + " " + item[key]); var check = item[key]; return check.toLowerCase().includes(param.toLowerCase()); });
+        return objects.filter(function (item) {
+            //console.log(key + " " + item[key]);
+            var check = item[key];
+            return check.toLowerCase().includes(param.toLowerCase());
+        });
     };
     return FilterCPipe;
 }());

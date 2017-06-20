@@ -30,7 +30,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 0,
                     twm: "VALBIRG02",
                     totReq: "1",
-                    toShow: true
+                    toShow: true,
+                    pool: "WALBEN34"
                 }, {
                     state: "AL",
                     city: "Birmingham",
@@ -42,7 +43,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 1,
                     twm: "AVEBIR",
                     totReq: "2",
-                    toShow: true
+                    toShow: true,
+                    pool: "BROTYLI07"
                 }, {
                     state: "AL",
                     city: "Cullman",
@@ -54,7 +56,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 3,
                     twm: "SERCUL02",
                     totReq: "4",
-                    toShow: true
+                    toShow: true,
+                    pool: "TOOCH98"
                 }, {
                     state: "AL",
                     city: "Gentry",
@@ -66,7 +69,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 4,
                     twm: "MCK",
                     totReq: "6",
-                    toShow: true
+                    toShow: true,
+                    pool: "MARMAN06"
                 }, {
                     state: "AR",
                     city: "North Little Rock",
@@ -78,7 +82,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 5,
                     twm: "VALBIRG02",
                     totReq: "10",
-                    toShow: true
+                    toShow: true,
+                    pool: "FREGRA06"
                 }, {
                     state: "AZ",
                     city: "Phoenix",
@@ -90,7 +95,8 @@ var Pool1MangPageComponent = (function () {
                     variance: 12,
                     twm: "VALBIRG02",
                     totReq: "13",
-                    toShow: true
+                    toShow: true,
+                    pool: "FORFORG6"
                 }, {
                     state: "AL",
                     city: "Birmingham",
@@ -102,9 +108,10 @@ var Pool1MangPageComponent = (function () {
                     variance: 9,
                     twm: "VALBIRG02",
                     totReq: "11",
-                    toShow: true
+                    toShow: true,
+                    pool: "WALBEN34"
                 }],
-            column: ["State", "City", "CSR", "Planner", "Company", "TMW", "Req Pool", "Current", "Variance", "Action"]
+            column: ["State", "City", "Pool #", "Company", "CSR", "Planner", "TMW", "Req Pool", "Current", "Variance", "Action"]
         };
         this.selectVarience(1);
     }

@@ -55,7 +55,8 @@ export class Pool1MangPageComponent {
             variance: 0,
             twm: "VALBIRG02",
             totReq: "1",
-            toShow: true
+            toShow: true,
+            pool: "WALBEN34"
 
         }, {
             state: "AL",
@@ -68,7 +69,8 @@ export class Pool1MangPageComponent {
             variance: 1,
             twm: "AVEBIR",
             totReq: "2",
-            toShow: true
+            toShow: true,
+            pool: "BROTYLI07"
         }, {
             state: "AL",
             city: "Cullman",
@@ -80,7 +82,8 @@ export class Pool1MangPageComponent {
             variance: 3,
             twm: "SERCUL02",
             totReq: "4",
-            toShow: true
+            toShow: true,
+            pool: "TOOCH98"
         }, {
             state: "AL",
             city: "Gentry",
@@ -92,7 +95,8 @@ export class Pool1MangPageComponent {
             variance: 4,
             twm: "MCK",
             totReq: "6",
-            toShow: true
+            toShow: true,
+            pool: "MARMAN06"
         }, {
             state: "AR",
             city: "North Little Rock",
@@ -104,7 +108,8 @@ export class Pool1MangPageComponent {
             variance: 5,
             twm: "VALBIRG02",
             totReq: "10",
-            toShow: true
+            toShow: true,
+            pool: "FREGRA06"
         }, {
             state: "AZ",
             city: "Phoenix",
@@ -116,7 +121,8 @@ export class Pool1MangPageComponent {
             variance: 12,
             twm: "VALBIRG02",
             totReq: "13",
-            toShow: true
+            toShow: true,
+            pool: "FORFORG6"
         }, {
             state: "AL",
             city: "Birmingham",
@@ -128,9 +134,10 @@ export class Pool1MangPageComponent {
             variance: 9,
             twm: "VALBIRG02",
             totReq: "11",
-            toShow: true
+            toShow: true,
+            pool:"WALBEN34"
         }],
-        column: ["State", "City", "CSR", "Planner", "Company", "TMW", "Req Pool","Current","Variance","Action"]
+        column: ["State", "City", "Pool #", "Company", "CSR", "Planner","TMW", "Req Pool","Current","Variance","Action"]
     };
     constructor() {
         this.selectVarience(1);

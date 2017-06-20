@@ -5,7 +5,7 @@
 
 .app-table {
     width: 100%;
-    margin-bottom:0px;
+    margin-bottom: 10px;
 }
 
 .app-table-tr {
@@ -29,12 +29,12 @@
 .ctg-textbox {
     border: none;
     padding: 10px;
-    height:30px;
+    height: 30px;
 }
 
-.action{
-    border:none;
-    background:transparent;
+.action {
+    border: none;
+    background: transparent;
 }
 
 .pm-select {
@@ -42,4 +42,11 @@
     margin-left: 10px;
     height: 31px;
     border-radius: 0px;
+}
+
+.pm-addBut {
+    border: none;
+    background: #00264B;
+    color: white;
+    height: 30px;
 }
