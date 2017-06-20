@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
+import { AgmCoreModule } from '@agm/core';
+import { AlertModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http';
-import { AgmCoreModule } from '@agm/core';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';

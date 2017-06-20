@@ -10,11 +10,9 @@
                     <option value=0>Pools having no variance</option>
                     <option value=-1>All pools</option>
                 </select>
-
+                <button class="pm-addBut pull-right" >Add <span class="pull-right glyphicon glyphicon-plus pm-add-plus"></span></button>
             </div>
-        <!--</div>
-        <div>asdf<a>{{stateFil}}</a><a>{{cityFil}}</a><a>{{ccFil}}</a>
-        </div>-->
+        </div>
         <div class="col-md-12">
             <div style="background: white;">
                 <h5 style="padding:15px;margin:0px;font-weight:bold">Pool List</h5>
@@ -36,14 +34,16 @@
                                 <span>{{item.city}}</span>
                             </td>
                             <td style="text-align:center">
+                                <span>{{item.pool}}</span>
+                            </td>
+                            <td style="text-align:center">
+                                <span>{{item.company}}</span>
+                            </td>
+                            <td style="text-align:center">
                                 <span>{{item.csr}}</span>
                             </td>
                             <td style="text-align:center">
                                 <span>{{item.planner}}</span>
-                            </td>
-                            <td style="text-align:center">
-
-                                <span>{{item.company}}</span>
                             </td>
                             <td style="text-align:center">
                                 <span>{{item.twm}}</span>
