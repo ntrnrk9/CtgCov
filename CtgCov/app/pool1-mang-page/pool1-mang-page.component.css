@@ -53,3 +53,29 @@
 .pm-add-plus {
     padding-left: 5px;
 }
+.pp-pu-text{
+    width:100%;
+}
+
+.no-padding{
+    padding:0px;
+}
+
+.pu-row {
+    margin: 0px;
+    padding: 10px 40px 10px 0px;
+}
+
+.modal-div{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.olPad {
+    padding-left: 15px;
+    padding-right: 0px;
+}
+.orPad {
+    padding-left: 0px;
+    padding-right: 15px;
+}
