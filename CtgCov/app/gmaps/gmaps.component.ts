@@ -17,19 +17,23 @@ export class GmapsComponent {
     citymap = [
         {
             center: { lat: 41.878, lng: -87.629 },
-            population: 2714856
+            population: 2714856,
+            icon:'../../assets/images/markers/available-truck.png'
         },
         {
             center: { lat: 40.714, lng: -74.005 },
-            population: 8405837
+            population: 8405837,
+            icon: '../../assets/images/markers/available-truck.png'
         },
         {
             center: { lat: 34.052, lng: -118.243 },
-            population: 3857799
+            population: 3857799,
+            icon: '../../assets/images/markers/available-truck.png'
         },
         {
             center: { lat: 49.25, lng: -123.1 },
-            population: 603502
+            population: 603502,
+            icon: '../../assets/images/markers/available-truck.png'
         }
     ];
     constructor() { }

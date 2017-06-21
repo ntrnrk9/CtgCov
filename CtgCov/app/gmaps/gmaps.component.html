@@ -1,4 +1,4 @@
 ﻿<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
-    <agm-marker *ngFor="let point of citymap" [latitude]="point.center.lat" [longitude]="point.center.lng"></agm-marker>
+    <agm-marker *ngFor="let point of citymap" [latitude]="point.center.lat" [longitude]="point.center.lng" [iconUrl]="point.icon"></agm-marker>
 </agm-map>
