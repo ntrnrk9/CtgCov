@@ -87,3 +87,9 @@
 .table-bordered1{
     border:1px solid silver;
 }
+
+.page-footer {
+    background-color: #f4f6f9;
+    height: 45px;
+    padding: 5px 40px 5px 30px;
+}

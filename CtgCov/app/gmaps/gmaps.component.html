@@ -1,11 +1,9 @@
 ﻿<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
     <agm-marker *ngFor="let point of citymap" [latitude]="point.center.lat" [longitude]="point.center.lng"
-                [label]="point.label"
-                [title]="point.title"
+                [iconUrl]="point.icon"
                 (markerClick)="clickedMarker(point.label, infoWindow, i)">
-        <agm-info-window #infoWindow [disableAutoPan]="true">
-            
+        <agm-info-window #infoWindow [disableAutoPan]="true"> 
             <div class="infowindow">
                 <div class="row header">
                     <div class="row head1">CTG 45224</div>
@@ -13,8 +11,8 @@
                     <div class="row head3">5th Wheel RV</div>
                 </div>
                 <div class="row title">
-                    <span class="vehicle-date">DOT Date:05/21/2017</span>  <br>
-                    <div class=" row vehicletype available">Available</div>
+                    <span class="vehicle-date">DOT Date:05/21/2017</span>
+                    <span class=" row vehicletype available">Available</span>
                 </div>
                 <div class="row content">Harney Country - ''</div>
                 <div class="row footer">

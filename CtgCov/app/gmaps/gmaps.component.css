@@ -6,8 +6,8 @@ agm-map {
     height: 500px;
 }
 .infowindow {
-    width: 300px;
-    padding:15px;
+    width: 200px;
+    padding:0px;
 }
 .header {
     border-bottom: 2px solid gray;
