@@ -17,26 +17,50 @@ var GmapsComponent = (function () {
         this.lat = 36.090240;
         this.lng = -95.712891;
         this.US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
+        this.infoWindowOpened = null;
         this.zoom = 4;
         this.citymap = [
             {
                 center: { lat: 41.878, lng: -87.629 },
-                population: 2714856
+                population: 2714856,
+                icon: '../../assets/images/markers/available-truck.png',
+                title: 'AAA',
+                label: 'A'
             },
             {
                 center: { lat: 40.714, lng: -74.005 },
-                population: 8405837
+                population: 8405837,
+                icon: '../../assets/images/markers/available-truck.png',
+                title: 'BBBB',
+                label: 'B'
             },
             {
                 center: { lat: 34.052, lng: -118.243 },
-                population: 3857799
+                population: 3857799,
+                icon: '../../assets/images/markers/available-truck.png',
+                title: '<h4>CCCCC</h4',
+                label: 'C'
             },
             {
                 center: { lat: 49.25, lng: -123.1 },
-                population: 603502
+                population: 603502,
+                icon: '../../assets/images/markers/available-truck.png',
+                title: 'DDDD',
+                label: 'D'
             }
         ];
     }
+    GmapsComponent.prototype.clickedMarker = function (label, infoWindow, index) {
+        console.log("clicked");
+        if (this.infoWindowOpened === infoWindow) {
+            return;
+        }
+        else if (this.infoWindowOpened !== null) {
+            this.infoWindowOpened.close();
+        }
+        this.infoWindowOpened = infoWindow;
+    };
+    ;
     GmapsComponent.prototype.ngOnInit = function () {
     };
     return GmapsComponent;
