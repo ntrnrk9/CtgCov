@@ -4,6 +4,7 @@
 .ctg-textbox {
     border: none;
     padding: 10px;
+    height:30px;
 }
 
 body {
@@ -16,6 +17,13 @@ body {
     border: 1px solid silver;
     background-color:white;
 }
+
+.filter-container {
+    background: #d1deef;
+    padding: 5px;
+    height: 40px
+}
+
 
 .page-heading {
     height: 40px;
