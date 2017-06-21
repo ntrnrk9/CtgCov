@@ -18,6 +18,7 @@ var Pool1MangPageComponent = (function () {
         this.ccFil = "";
         this.selectedVarience = 1;
         this.data = [];
+        this.pageNum = 1;
         this.config = {
             rows: [{
                     state: "AL",

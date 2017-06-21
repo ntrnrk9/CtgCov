@@ -15,6 +15,7 @@ export class Pool1MangPageComponent {
     ccFil: String = "";
     selectedVarience: Number = 1;
     data: any[] = [];
+    pageNum: Number = 1;
     selectVarience(value: Number) {
         this.data = [];
         console.log(this.selectedVarience);
