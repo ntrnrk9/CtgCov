@@ -16,6 +16,9 @@ export class Pool1MangPageComponent {
     selectedVarience: Number = 1;
     data: any[] = [];
     pageNum: Number = 1;
+    countryList: any = ["AL","AZ","AR"];
+    cityList: any = ["Birmingham", "Cullman", "Gentry", "North Little Rock", "Phoenix"];
+    ccList: any = ["Averitt", "Serta", "Walmart 6008", "Valspar"];
     selectVarience(value: Number) {
         this.data = [];
         console.log(this.selectedVarience);

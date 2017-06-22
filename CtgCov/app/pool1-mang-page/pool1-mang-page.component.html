@@ -1,5 +1,5 @@
 ﻿<div class="page-container">
-    <div class="col-md-12 page-heading"><b>Pool Variance Dashboard</b></div><br/>
+    <div class="col-md-12 page-heading"><b>Pool Variance Dashboard</b></div><br />
     <div class="page-body">
         <div class="row">
             <div class="col-md-12">
@@ -7,37 +7,72 @@
                     <!--<input class="ctg-textbox pull-left" placeholder="Search by state" [(ngModel)]="stateFil" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
                     <!--<input class="ctg-textbox pull-left" placeholder="Search by city" [(ngModel)]="cityFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
                     <!--<input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
-                    
-                    <div class="dropdown pull-left pm-select-cont">
-                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Search by state" [(ngModel)]="stateFil"/>
-                        <span class="caret"></span>
-                        <ul class="dropdown-menu no-padding">
-                            <li><input type="checkbox" value="">AL</li>
-                            <li><input type="checkbox" value="">AR</li>
-                            <li><input type="checkbox" value="">AZ</li>
-                        </ul>
-                    </div>
-                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Search by city" [(ngModel)]="cityFil" />
-                        <span class="caret"></span>
-                        <ul class="dropdown-menu no-padding">
-                            <li><input type="checkbox" value="">Birmingham</li>
-                            <li><input type="checkbox" value="">Cullman</li>
-                            <li><input type="checkbox" value="">Gentry</li>
-                            <li><input type="checkbox" value="">North Little Rock</li>
-                            <li><input type="checkbox" value="">Phoenix</li>
-                        </ul>
-                    </div>
-                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Company/Customer" [(ngModel)]="ccFil" />
-                        <span class="caret"></span>
-                        <ul class="dropdown-menu no-padding">
-                            <li><input type="checkbox" value="">Averitt</li>
-                            <li><input type="checkbox" value="">Serta</li>
-                            <li><input type="checkbox" value="">Walmart 6008</li>
-                            <li><input type="checkbox" value="">Valspar</li>
 
-                        </ul>
+                    <div class="dropdown pull-left pm-select-cont">
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Search by state"  />
+                        <span class="caret"></span>
+                        <div class="dropdown-menu no-padding mulSel-dd">
+                            <div class="input-group">
+                                <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="stateFil">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default search-box" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <ul class="mulSel-dd-ul">
+                                <li><input type="checkbox" value="">Select All <a class="pull-right" href="#">Clear All</a></li>
+                                <li *ngFor="let item of countryList| filterArray:stateFil"><input type="checkbox" value=""/>{{item}}</li>
+                            </ul>
+                            <div class="div-center">
+                                <input type="button" class="btn btn-default" value="Apply" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Search by city" />
+                        <span class="caret"></span>
+                        <div class="dropdown-menu no-padding mulSel-dd">
+                            
+                            <div class="input-group">
+                                <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="cityFil">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default search-box" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <ul class="mulSel-dd-ul">
+                                <li><input type="checkbox" value="">Select All <a class="pull-right" href="#">Clear all</a></li>
+                                <li *ngFor="let item of cityList| filterArray:cityFil"><input type="checkbox" value="" />{{item}}</li>
+                            </ul>
+                            <div class="div-center">
+                                <input type="button" class="btn btn-default" value="Apply" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Company/Customer" />
+                        <span class="caret"></span>
+                        <div class="dropdown-menu no-padding mulSel-dd">
+                            
+                            <div class="input-group">
+                                <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="ccFil">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default search-box" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <ul class="mulSel-dd-ul">
+                                <li><input type="checkbox" value="">Select All <a class="pull-right" href="#">Clear All</a></li>
+                                <li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>
+                            </ul>
+                            <div class="div-center">
+                                <input type="button" class="btn btn-default" value="Apply" />
+                            </div>
+                        </div>
                     </div>
                     <select class="form-control pull-left pm-select" id="sel1" [ngModel]="selectedVarience" (ngModelChange)="selectVarience($event)">
                         <option value=1>Pools having variance</option>

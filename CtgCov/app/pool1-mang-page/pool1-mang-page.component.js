@@ -19,6 +19,9 @@ var Pool1MangPageComponent = (function () {
         this.selectedVarience = 1;
         this.data = [];
         this.pageNum = 1;
+        this.countryList = ["AL", "AZ", "AR"];
+        this.cityList = ["Birmingham", "Cullman", "Gentry", "North Little Rock", "Phoenix"];
+        this.ccList = ["Averitt", "Serta", "Walmart 6008", "Valspar"];
         this.config = {
             rows: [{
                     state: "AL",

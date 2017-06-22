@@ -126,3 +126,42 @@ li {
 .blue-but{
     color:#00264b;
 }
+
+.mulSel-dd {
+    width: 198px;
+    border-radius: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 10px 10px 10px 10px;
+}
+.mulSel-dd-ul {
+    padding: 5px 0px 5px 0px;
+    list-style: none;
+    margin-bottom: 0px;
+    height: 129px;
+    overflow-y: scroll;
+    margin: 5px 0px 5px 0px;
+}
+
+.div-center{
+    margin:auto;
+    width:40%;
+}
+.mulSel-but-apply {
+    height: 30px;
+    border-radius: 0px;
+    padding: 1px 2px 1px 2px;
+    width:100%;
+}
+
+.filters {
+    background-color: white;
+    padding: 5px;
+    width: 180px;
+    text-align: left;
+    border:none;
+}
+.search-box{
+    height:30px;
+    border-radius:0px;
+}

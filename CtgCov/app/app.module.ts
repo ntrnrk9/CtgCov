@@ -22,6 +22,7 @@ import { Pool1MangPageComponent } from './pool1-mang-page/pool1-mang-page.compon
 import { Footer1Component } from './footer1/footer1.component';
 
 import { FilterCPipe } from './Filters/filterC.pipe';
+import { FilterArrayPipe } from './Filters/filterArray.pipe';
 
 @NgModule({
     imports: [BrowserModule, HttpModule, CommonModule, FormsModule,
@@ -34,7 +35,8 @@ import { FilterCPipe } from './Filters/filterC.pipe';
         YardMangPageComponent, TableComponent,
         AllocationPageComponent, PoolMangPageComponent,
         Pool1MangPageComponent, Footer1Component,
-        FilterCPipe],
+        FilterCPipe, FilterArrayPipe
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
