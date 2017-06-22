@@ -4,15 +4,47 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="background: #d1deef;padding:5px;height:40px">
-                    <input class="ctg-textbox pull-left" placeholder="Search by state" [(ngModel)]="stateFil" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
-                    <input class="ctg-textbox pull-left" placeholder="Search by city" [(ngModel)]="cityFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
-                    <input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>
+                    <!--<input class="ctg-textbox pull-left" placeholder="Search by state" [(ngModel)]="stateFil" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
+                    <!--<input class="ctg-textbox pull-left" placeholder="Search by city" [(ngModel)]="cityFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
+                    <!--<input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
+                    
+                    <div class="dropdown pull-left pm-select-cont">
+                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Search by state" [(ngModel)]="stateFil"/>
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu no-padding">
+                            <li><input type="checkbox" value="">AL</li>
+                            <li><input type="checkbox" value="">AR</li>
+                            <li><input type="checkbox" value="">AZ</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
+                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Search by city" [(ngModel)]="cityFil" />
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu no-padding">
+                            <li><input type="checkbox" value="">Birmingham</li>
+                            <li><input type="checkbox" value="">Cullman</li>
+                            <li><input type="checkbox" value="">Gentry</li>
+                            <li><input type="checkbox" value="">North Little Rock</li>
+                            <li><input type="checkbox" value="">Phoenix</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
+                        <input class="ctg-textbox dropdown-toggle" type="text" data-toggle="dropdown" placeholder="Company/Customer" [(ngModel)]="ccFil" />
+                        <span class="caret"></span>
+                        <ul class="dropdown-menu no-padding">
+                            <li><input type="checkbox" value="">Averitt</li>
+                            <li><input type="checkbox" value="">Serta</li>
+                            <li><input type="checkbox" value="">Walmart 6008</li>
+                            <li><input type="checkbox" value="">Valspar</li>
+
+                        </ul>
+                    </div>
                     <select class="form-control pull-left pm-select" id="sel1" [ngModel]="selectedVarience" (ngModelChange)="selectVarience($event)">
                         <option value=1>Pools having variance</option>
                         <option value=0>Pools having no variance</option>
                         <option value=-1>All pools</option>
                     </select>
-                    <button type="button" class="pm-addBut pull-right" data-toggle="modal" data-target="#editModal">Add <span class="pull-right glyphicon glyphicon-plus pm-add-plus"></span></button>
+                    <button type="button" class="pm-addBut pull-right" data-toggle="modal" data-target="#myModal">Add <span class="pull-right glyphicon glyphicon-plus pm-add-plus"></span></button>
                     <!--<button type="button" class="btn btn-info btn-lg"  data-toggle="modal" data-target="#myModal">Open Modal</button>-->
                 </div>
             </div>
@@ -120,7 +152,7 @@
                                     </div><div class="col-md-6 olPad">
                                         <label>Required</label><br />
                                         <input class="no-padding col-md-12" />
-                                    </div><button class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                                    </div><button class="pull-right add-trType"><span class="glyphicon glyphicon-plus-sign blue-but"></span></button>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +201,7 @@
                                     </div><div class="col-md-6 olPad">
                                         <label>Required</label><br />
                                         <input class="no-padding col-md-12" />
-                                    </div><button class="pull-right"><span class="glyphicon glyphicon-plus-sign"></span></button>
+                                    </div><button class="pull-right add-trType"><span class="glyphicon glyphicon-plus-sign blue-but"></span></button>
                                 </div>
                             </div>
                         </div>
