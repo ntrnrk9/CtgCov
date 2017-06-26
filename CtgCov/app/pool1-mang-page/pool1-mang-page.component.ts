@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FilterCPipe } from '../Filters/filterC.pipe';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'pool1-mang-page',
@@ -19,13 +21,16 @@ export class Pool1MangPageComponent {
     countryList: any = ["AL","AZ","AR"];
     cityList: any = ["Birmingham", "Cullman", "Gentry", "North Little Rock", "Phoenix"];
     ccList: any = ["Averitt", "Serta", "Walmart 6008", "Valspar"];
+    allCities: any = [{ "cityName": "Cayuga", "cityState": "WI", "cityZip": "54546", "cityCountry": 3, "cityRegion": "UPMID", "cityLatitude": "46.24000", "cityLongtitude": "90.68000" }, { "cityName": "Cazenovia", "cityState": "WI", "cityZip": "53924", "cityCountry": 3, "cityRegion": "UPMID", "cityLatitude": "43.52000", "cityLongtitude": "90.20000" }];
+    allStates: any = [];
+    allCC: any = [];
     selectVarience(value: Number) {
         this.data = [];
         console.log(this.selectedVarience);
         console.log(this.cityFil+" "+this.stateFil);
         this.selectedVarience = value;
         // ... do other stuff here ...
-        for (var j of this.config.rows) {
+        for (var j of this.ob.groups) {
             if (value == 0) {
                 if (j.variance == 0) {
                     j.toShow = true;
@@ -47,8 +52,8 @@ export class Pool1MangPageComponent {
             }
         }
     }
-    config = {
-        rows: [{
+    ob = {
+        groups: [{
             state: "AL",
             city: "Birmingham",
             csr: "Mike",
@@ -143,9 +148,65 @@ export class Pool1MangPageComponent {
         }],
         column: ["State", "City", "Pool #", "Company", "CSR", "Planner","TMW", "Req Pool","Current","Variance","Action"]
     };
-    constructor() {
-        this.selectVarience(1);
+    private getAllCities() {
+        alert("hi");
+        this.http.get("http://192.168.1.77:81/TrailersCheck.asmx/GetAllCities").map(res => res.json())
+            .subscribe(
+            (data) => { console.log(data); alert("Success"); this.allCities = data; }, //For Success Response
+            err => { console.error(err) } //For Error Response
+            );      
     }
+    private getAllStates() {
+        alert("hi");
+        this.http.get("http://192.168.1.77:81/TrailersCheck.asmx/GetAllStates").map(res => res.json())
+            .subscribe(
+            (data) => { console.log(data); alert("Success"); this.allStates = data; }, //For Success Response
+            err => { console.error(err) } //For Error Response
+            );
+    }
+    private getAllCompany() {
+        alert("hi");
+        this.http.get("http://192.168.1.77:81/TrailersCheck.asmx/GetAllCompanies").map(res => res.json())
+            .subscribe(
+            (data) => { console.log(data); alert("Success"); this.allCC = data; }, //For Success Response
+            err => { console.error(err) } //For Error Response
+            );
+    }
+
+    constructor(private http: Http) {
+        this.selectVarience(1);
+        this.getAllCities();
+        this.getAllStates();
+        this.getAllCompany();
+    }
+
+    
+
+    private addTrailer() {
+
+    }
+    
+    add() {
+        //alert("a");
+        var ele = {
+            state: "",
+            city: "",
+            csr: "",
+            planner: "",
+            company: "",
+            reqPool: "",
+            curr: "",
+            variance: 0,
+            twm: "",
+            totReq: "",
+            toShow: true,
+            pool: ""
+        };
+        this.ob.groups.push(ele);
+        
+
+    }
+
 }
 
 // This code copy to app.module.ts

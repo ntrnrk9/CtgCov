@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 import { AlertModule } from 'ngx-bootstrap';
