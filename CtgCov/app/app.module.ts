@@ -21,6 +21,7 @@ import { PoolMangPageComponent } from './pool-mang-page/pool-mang-page.component
 import { AllocationPageComponent } from './allocation-page/allocation-page.component';
 import { Pool1MangPageComponent } from './pool1-mang-page/pool1-mang-page.component';
 import { Footer1Component } from './footer1/footer1.component';
+import { SearchfilterComponent } from './searchfilter/searchfilter.component';
 
 import { FilterCPipe } from './Filters/filterC.pipe';
 import { FilterArrayPipe } from './Filters/filterArray.pipe';
@@ -36,7 +37,8 @@ import { FilterArrayPipe } from './Filters/filterArray.pipe';
         YardMangPageComponent, TableComponent,
         AllocationPageComponent, PoolMangPageComponent,
         Pool1MangPageComponent, Footer1Component,
-        FilterCPipe, FilterArrayPipe
+        FilterCPipe, FilterArrayPipe,
+        SearchfilterComponent
     ],
     bootstrap: [AppComponent]
 })
