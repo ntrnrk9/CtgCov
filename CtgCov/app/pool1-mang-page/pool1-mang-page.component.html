@@ -9,7 +9,7 @@
                     <!--<input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
 
                     <div class="dropdown pull-left pm-select-cont">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Search by state" />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{stateSFlabel}} />
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
                             <div class="input-group">
@@ -24,7 +24,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
                                 <!--<li *ngFor="let item of countryList| filterArray:stateFil"><input type="checkbox" value=""/>{{item}}</li>-->
-                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" />{{item.stateCode}}</li>
+                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" (change)="stateCheckEvent($event.target.checked,item.stateCode)"/>{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="filterByState()"/>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Search by city" />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{citySFlabel}} />
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
@@ -47,15 +47,15 @@
                             <ul class="mulSel-dd-ul">
                                 <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
                                 <!--<li *ngFor="let item of cityList| filterArray:cityFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" />{{item.cityName}}</li>
+                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" (change)="cityCheckEvent($event.target.checked,item.cityName)"/>{{item.cityName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" />
+                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByCity()"/>
                             </div>
                         </div>
                     </div>
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value="Company/Customer" />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{ccSFlabel}} />
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
@@ -70,10 +70,10 @@
                             <ul class="mulSel-dd-ul">
                                 <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" />{{item.companyName}}</li>
+                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" (change)="ccCheckEvent($event.target.checked,item.companyName)"/>{{item.companyName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" />
+                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByCC()"/>
                             </div>
                         </div>
                     </div>
