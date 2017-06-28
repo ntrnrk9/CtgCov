@@ -23,6 +23,7 @@ var pool_mang_page_component_1 = require("./pool-mang-page/pool-mang-page.compon
 var allocation_page_component_1 = require("./allocation-page/allocation-page.component");
 var pool1_mang_page_component_1 = require("./pool1-mang-page/pool1-mang-page.component");
 var footer1_component_1 = require("./footer1/footer1.component");
+var searchfilter_component_1 = require("./searchfilter/searchfilter.component");
 var filterC_pipe_1 = require("./Filters/filterC.pipe");
 var filterArray_pipe_1 = require("./Filters/filterArray.pipe");
 var AppModule = (function () {
@@ -42,7 +43,8 @@ AppModule = __decorate([
             yard_mang_page_component_1.YardMangPageComponent, table_component_1.TableComponent,
             allocation_page_component_1.AllocationPageComponent, pool_mang_page_component_1.PoolMangPageComponent,
             pool1_mang_page_component_1.Pool1MangPageComponent, footer1_component_1.Footer1Component,
-            filterC_pipe_1.FilterCPipe, filterArray_pipe_1.FilterArrayPipe
+            filterC_pipe_1.FilterCPipe, filterArray_pipe_1.FilterArrayPipe,
+            searchfilter_component_1.SearchfilterComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })

@@ -51,6 +51,31 @@ export class Pool1MangPageComponent {
         toShow: true,
         pool: ""
     };
+    choosenState:any = ["AZ","AR"];
+
+    private filterByState() {
+        var temp = JSON.parse(JSON.stringify(this.data));
+
+        for (var i = 0; i < temp.length; i++) {
+            if (this.inArray(this.choosenState, temp[i].state)) {
+
+            } else {
+                temp.splice(i, 1); i--;
+            }
+        }
+
+        this.data = JSON.parse(JSON.stringify(temp));
+        this.resetPage();
+    }
+
+    private inArray(items:any, value:any) {
+        for (var i = 0; i < items.length; i++) {
+            if (items[i] === value)
+                return true;
+        }
+        return false;
+    }
+
     selectVarience(value: Number) {
         this.data = [];
         console.log(this.selectedVarience);

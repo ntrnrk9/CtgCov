@@ -27,7 +27,7 @@
                                 <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" />{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" />
+                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByState()"/>
                             </div>
                         </div>
                     </div>
