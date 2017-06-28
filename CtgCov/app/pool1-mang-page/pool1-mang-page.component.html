@@ -27,7 +27,7 @@
                                 <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" (change)="stateCheckEvent($event.target.checked,item.stateCode)"/>{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByState()"/>
+                                <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" (change)="cityCheckEvent($event.target.checked,item.cityName)"/>{{item.cityName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByCity()"/>
+                                <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                 <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" (change)="ccCheckEvent($event.target.checked,item.companyName)"/>{{item.companyName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn btn-default" value="Apply" (click)="filterByCC()"/>
+                                <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
                             </div>
                         </div>
                     </div>
