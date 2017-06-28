@@ -22,9 +22,9 @@
                             </div>
 
                             <ul class="mulSel-dd-ul">
-                                <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
+                                <li><a class="pull-left" href="#" (click)="stateCheckAllFun()">Select All</a><a class="pull-right" href="#" (click)="stateClearAllFun()">Clear All</a></li>
                                 <!--<li *ngFor="let item of countryList| filterArray:stateFil"><input type="checkbox" value=""/>{{item}}</li>-->
-                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" (change)="stateCheckEvent($event.target.checked,item.stateCode)"/>{{item.stateCode}}</li>
+                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" [checked]="stateCheckAll" (change)="stateCheckEvent($event.target.checked,item.stateCode)"/>{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
@@ -45,9 +45,9 @@
                                 </div>
                             </div>
                             <ul class="mulSel-dd-ul">
-                                <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
+                                <li><a class="pull-left" href="#" (click)="cityCheckAllFun()">Select All</a><a class="pull-right" href="#" (click)="cityClearAllFun()">Clear All</a></li>
                                 <!--<li *ngFor="let item of cityList| filterArray:cityFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" (change)="cityCheckEvent($event.target.checked,item.cityName)"/>{{item.cityName}}</li>
+                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" [checked]="cityCheckAll" (change)="cityCheckEvent($event.target.checked,item.cityName)"/>{{item.cityName}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
@@ -68,9 +68,9 @@
                                 </div>
                             </div>
                             <ul class="mulSel-dd-ul">
-                                <li><a class="pull-left" href="#">Select All</a><a class="pull-right" href="#">Clear All</a></li>
+                                <li><a class="pull-left" href="#" (click)="ccCheckAllFun()">Select All</a><a class="pull-right" href="#" (click)="ccClearAllFun()">Clear All</a></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" (change)="ccCheckEvent($event.target.checked,item.companyName)"/>{{item.companyName}}</li>
+                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.companyName)"/>{{item.companyName}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
