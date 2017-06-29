@@ -18,6 +18,7 @@ export class Pool1MangPageComponent {
     stateSFlabel: any = "Select a state";
     citySFlabel: any = "Select a city";
     ccSFlabel: any = 'Customer\Company';
+    plannerSFlabel: any = 'Planner';
     selectedCompany: any = "Select a company";
     selectedState: any = "Select a state";
     selectedCity: any = "Select a city";
@@ -25,6 +26,7 @@ export class Pool1MangPageComponent {
     selectedCsr: any = "Select a Csr";
     selectedPlanner: any = "Select a planner";
     allCsr: any;
+    asc = true;
     //[name: string]: any;
     allPlanners: any = [];
     private name = 'Pool1Mang-pageComponent';
@@ -32,6 +34,7 @@ export class Pool1MangPageComponent {
     stateFil: String = "";
     ccFil: String = "";
     selectedVarience: Number = 1;
+    selectedSR: Number = 0;
     data: any[] = [];
     result: any[] = [];
     pageNum: Number = 1;
@@ -61,6 +64,10 @@ export class Pool1MangPageComponent {
     choosenState:any = [];
     choosenCity: any = [];
     choosenCC: any = [];
+
+    private sort() {
+        this.asc = !this.asc;
+    }
 
     private ccCheckAllFun() {
         this.ccCheckAll = true;
@@ -203,7 +210,7 @@ export class Pool1MangPageComponent {
         var temp = JSON.parse(JSON.stringify(result));
 
         if (this.choosenCC.length == 0) {
-            this.ccSFlabel = 'Customer/Company';
+            this.ccSFlabel = 'Customer\Company';
             return result;
         } else {
             this.ccSFlabel = this.choosenCC.length + " option choosen";
