@@ -12,8 +12,9 @@ export class GmapsComponent {
     lat: number = 36.090240;
     lng: number = -95.712891;
     US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
-    infoWindowOpened:any = null;
-
+    infoWindowOpened: any = null;
+    fullscreenControl: Boolean = true;
+    streetViewControl: Boolean = false;
     clickedMarker(label: string, infoWindow: any, index: number) {
         console.log("clicked");
         if (this.infoWindowOpened === infoWindow) {
@@ -23,6 +24,10 @@ export class GmapsComponent {
         }
 
         this.infoWindowOpened = infoWindow;
+        //if (this.zoom == 15)
+        //    this.zoom = 4;
+        //else
+        //    this.zoom = 15;
     };
     zoom: number = 4;
     citymap = [
@@ -55,6 +60,19 @@ export class GmapsComponent {
             label: 'D'
         }
     ];
+
+    toggleIW(item:any) {
+        //alert("hi");
+        console.log("hi");
+        if (this.infoWindowOpened == null) {
+            this.infoWindowOpened = item;
+        } else {
+            this.infoWindowOpened.close();
+            this.infoWindowOpened = item;
+        }
+        item.open();
+        
+    }
     constructor() { }
 
     ngOnInit() {

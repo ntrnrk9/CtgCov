@@ -18,6 +18,8 @@ var GmapsComponent = (function () {
         this.lng = -95.712891;
         this.US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
         this.infoWindowOpened = null;
+        this.fullscreenControl = true;
+        this.streetViewControl = false;
         this.zoom = 4;
         this.citymap = [
             {
@@ -59,8 +61,24 @@ var GmapsComponent = (function () {
             this.infoWindowOpened.close();
         }
         this.infoWindowOpened = infoWindow;
+        //if (this.zoom == 15)
+        //    this.zoom = 4;
+        //else
+        //    this.zoom = 15;
     };
     ;
+    GmapsComponent.prototype.toggleIW = function (item) {
+        //alert("hi");
+        console.log("hi");
+        if (this.infoWindowOpened == null) {
+            this.infoWindowOpened = item;
+        }
+        else {
+            this.infoWindowOpened.close();
+            this.infoWindowOpened = item;
+        }
+        item.open();
+    };
     GmapsComponent.prototype.ngOnInit = function () {
     };
     return GmapsComponent;

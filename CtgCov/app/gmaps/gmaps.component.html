@@ -1,8 +1,15 @@
-﻿<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+﻿<agm-map 
+         [latitude]="lat"
+         [longitude]="lng" 
+         [zoom]="zoom"
+         [fullscreenControl]="fullscreenControl"
+         [streetViewControl]="streetViewControl">
     <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
     <agm-marker *ngFor="let point of citymap" [latitude]="point.center.lat" [longitude]="point.center.lng"
                 [iconUrl]="point.icon"
-                (markerClick)="clickedMarker(point.label, infoWindow, i)">
+                [openInfoWindow]="true"
+                (markerClick)="clickedMarker(point.label, infoWindow, i)"
+                (mouseOver)="toggleIW(infoWindow)">
         <agm-info-window #infoWindow [disableAutoPan]="true"> 
             <div class="infowindow">
                 <div class="row header">
