@@ -2,8 +2,10 @@
          [latitude]="lat"
          [longitude]="lng" 
          [zoom]="zoom"
+         [scrollwheel]="false"
          [fullscreenControl]="fullscreenControl"
-         [streetViewControl]="streetViewControl">
+         [streetViewControl]="streetViewControl"
+         (mapClick)="mapClicked()">
     <!--<agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>-->
     <agm-marker *ngFor="let point of citymap" [latitude]="point.center.lat" [longitude]="point.center.lng"
                 [iconUrl]="point.icon"

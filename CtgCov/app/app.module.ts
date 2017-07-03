@@ -22,6 +22,7 @@ import { AllocationPageComponent } from './allocation-page/allocation-page.compo
 import { Pool1MangPageComponent } from './pool1-mang-page/pool1-mang-page.component';
 import { Footer1Component } from './footer1/footer1.component';
 import { SearchfilterComponent } from './searchfilter/searchfilter.component';
+import { GmapjsComponent } from './gmapjs/gmapjs.component';
 
 import { FilterCPipe } from './Filters/filterC.pipe';
 import { FilterArrayPipe } from './Filters/filterArray.pipe';
@@ -38,7 +39,7 @@ import { FilterArrayPipe } from './Filters/filterArray.pipe';
         AllocationPageComponent, PoolMangPageComponent,
         Pool1MangPageComponent, Footer1Component,
         FilterCPipe, FilterArrayPipe,
-        SearchfilterComponent
+        SearchfilterComponent, GmapjsComponent
     ],
     bootstrap: [AppComponent]
 })
