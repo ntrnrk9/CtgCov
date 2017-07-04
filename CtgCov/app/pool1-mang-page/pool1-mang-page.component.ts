@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
     //pipes: [FilterCPipe]
 })
 export class Pool1MangPageComponent {
-    rowLimit: any = 4;
+    rowLimit: any = 10;
     pageNumber: any = 0;
     lLimit: any = this.pageNumber * 4;
     uLimit: any = (this.pageNumber + 1) * 4;
@@ -278,16 +278,16 @@ export class Pool1MangPageComponent {
             }
         }
         //this.data = [];
-        //this.data = JSON.parse(JSON.stringify(this.result));
-        this.data = JSON.parse(JSON.stringify(this.ob.groups));
+        this.data = JSON.parse(JSON.stringify(this.result));
+        //this.data = JSON.parse(JSON.stringify(this.ob.groups));
         this.resetPage();
     }
 
     private resetPage() {
-        this.rowLimit = 4;
+        //this.rowLimit = 4;
         this.pageNumber = 0;
-        this.lLimit = this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.data.length < this.uLimit) {
             this.uLimit = this.data.length;
         }
@@ -400,7 +400,7 @@ export class Pool1MangPageComponent {
         this.http.get(url1).map(res => res.json())
             .subscribe(
             (data) => {console.log("getAllCities data recieved "); this.allCities = data; }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllCities error recieved "); } //For Error Response
             );
     }
 
@@ -409,7 +409,7 @@ export class Pool1MangPageComponent {
         this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllStates").map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllStates data recieved"); this.allStates = data; }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllStates error recieved"); } //For Error Response
             );
     }
 
@@ -418,7 +418,7 @@ export class Pool1MangPageComponent {
         this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllCompanies").map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllCompany data recieved"); this.allCC = data; }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllCompany error recieved"); } //For Error Response
             );
     }
 
@@ -431,7 +431,7 @@ export class Pool1MangPageComponent {
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllCsr data recieved"); this.allCsr = data; }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllCsr error recieved"); } //For Error Response
             );
     }
 
@@ -441,7 +441,7 @@ export class Pool1MangPageComponent {
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllPlanner error recieved"); } //For Error Response
             );
     }
 
@@ -451,7 +451,7 @@ export class Pool1MangPageComponent {
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlools data recieved"); this.allPools = data; this.ob.groups = data; this.selectVarience(1); }, //For Success Response
-            (err) => { console.error(err) } //For Error Response
+            (err) => { console.log("getAllPlools error recieved"); } //For Error Response
             );
     }
 
@@ -497,8 +497,8 @@ export class Pool1MangPageComponent {
     private nextPage() {
         console.log("nextPage");
         this.pageNumber += 1;
-        this.lLimit = this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.uLimit>this.data.length) {
             this.uLimit = this.data.length;
         }
@@ -508,8 +508,8 @@ export class Pool1MangPageComponent {
     private prevPage() {
         this.pageNumber -= 1;
         console.log("prevPage");
-        this.lLimit= this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.lLimit <= 0) {
             this.lLimit = 0;
         }

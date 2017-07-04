@@ -15,7 +15,7 @@ require("rxjs/add/operator/map");
 var Pool1MangPageComponent = (function () {
     function Pool1MangPageComponent(http) {
         this.http = http;
-        this.rowLimit = 4;
+        this.rowLimit = 10;
         this.pageNumber = 0;
         this.lLimit = this.pageNumber * 4;
         this.uLimit = (this.pageNumber + 1) * 4;
@@ -377,15 +377,15 @@ var Pool1MangPageComponent = (function () {
             }
         }
         //this.data = [];
-        //this.data = JSON.parse(JSON.stringify(this.result));
-        this.data = JSON.parse(JSON.stringify(this.ob.groups));
+        this.data = JSON.parse(JSON.stringify(this.result));
+        //this.data = JSON.parse(JSON.stringify(this.ob.groups));
         this.resetPage();
     };
     Pool1MangPageComponent.prototype.resetPage = function () {
-        this.rowLimit = 4;
+        //this.rowLimit = 4;
         this.pageNumber = 0;
-        this.lLimit = this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.data.length < this.uLimit) {
             this.uLimit = this.data.length;
         }
@@ -400,7 +400,7 @@ var Pool1MangPageComponent = (function () {
         var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCities";
         this.http.get(url1).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCities data recieved "); _this.allCities = data; }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllCities error recieved "); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.getAllStates = function () {
@@ -408,7 +408,7 @@ var Pool1MangPageComponent = (function () {
         //alert("hi");
         this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllStates").map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllStates data recieved"); _this.allStates = data; }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllStates error recieved"); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.getAllCompany = function () {
@@ -416,7 +416,7 @@ var Pool1MangPageComponent = (function () {
         //alert("hi");
         this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllCompanies").map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCompany data recieved"); _this.allCC = data; }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllCompany error recieved"); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.getAllCsr = function () {
@@ -428,7 +428,7 @@ var Pool1MangPageComponent = (function () {
         var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCsr?csr=0&csrCode=0";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCsr data recieved"); _this.allCsr = data; }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllCsr error recieved"); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.getAllPlanner = function () {
@@ -437,7 +437,7 @@ var Pool1MangPageComponent = (function () {
         var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPlanners?planner=0&plannerCode=0";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.getAllPool = function () {
@@ -446,7 +446,7 @@ var Pool1MangPageComponent = (function () {
         var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPools";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlools data recieved"); _this.allPools = data; _this.ob.groups = data; _this.selectVarience(1); }, //For Success Response
-        function (err) { console.error(err); } //For Error Response
+        function (err) { console.log("getAllPlools error recieved"); } //For Error Response
         );
     };
     Pool1MangPageComponent.prototype.toEdit = function (index) {
@@ -486,8 +486,8 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.prevPage = function () {
         this.pageNumber -= 1;
         console.log("prevPage");
-        this.lLimit = this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.lLimit <= 0) {
             this.lLimit = 0;
         }
