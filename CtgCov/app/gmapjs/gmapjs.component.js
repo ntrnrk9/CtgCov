@@ -15,7 +15,7 @@ var GmapjsComponent = (function () {
         this.name = 'GmapjsComponent';
         this.US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
         this.markers = [];
-        this.test = "Sydney, NSW";
+        this.state = "Sydney, NSW";
         this.geocoder = null;
         this.address = "United States";
     }
@@ -82,10 +82,10 @@ var GmapjsComponent = (function () {
         //this.findAddress(this.address);
     };
     GmapjsComponent.prototype.geocodeAddress = function () {
-        alert(this.test);
+        alert(this.state);
         var geocoder = this.geocoder;
         var resultsMap = this.map;
-        var address = this.test;
+        var address = this.state;
         geocoder.geocode({ 'address': address }, function (results, status) {
             if (status === 'OK') {
                 var markerBounds = new google.maps.LatLngBounds();
@@ -94,40 +94,19 @@ var GmapjsComponent = (function () {
                 console.log(results[0]);
                 resultsMap.fitBounds(results[0].geometry.viewport);
                 resultsMap.setZoom(6);
+                this.map = resultsMap;
             }
             else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }
         });
     };
-    GmapjsComponent.prototype.findAddress = function (address) {
-        this.address = "United States";
-        this.selectedState = "Alabama";
-        var addressStr = this.selectedState;
-        if (!this.address && (addressStr != ''))
-            this.address = "State of " + addressStr;
-        else
-            this.address = addressStr;
-        if ((this.address != '') && this.geocoder) {
-            this.geocoder.geocode({ 'address': this.address }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-                        if (results && results[0]
-                            && results[0].geometry && results[0].geometry.viewport)
-                            this.map.fitBounds(results[0].geometry.viewport);
-                    }
-                    else {
-                        alert("No results found");
-                    }
-                }
-                else {
-                    alert("Geocode was not successful for the following reason: " + status);
-                }
-            });
-        }
-    };
     return GmapjsComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], GmapjsComponent.prototype, "state", void 0);
 GmapjsComponent = __decorate([
     core_1.Component({
         selector: 'gmapjs',

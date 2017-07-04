@@ -5,12 +5,12 @@
         
         <div class="col-md-12 page-body">
             <div class="filter-container">
-                <input class="ctg-textbox" placeholder="Trailer ID" />
-                <input class="ctg-textbox" placeholder="Choose state" style="margin-left:10px" />
+                <input class="ctg-textbox" placeholder="Trailer ID" [(ngModel)]="selectedID"/>
+                <input class="ctg-textbox" placeholder="Choose state" [(ngModel)]="selectedState" style="margin-left:10px" />
             </div>
             <div style="padding-top:15px;">
                 <!--<gmaps></gmaps>-->
-                <gmapjs></gmapjs>
+                <gmapjs [state]="selectedState"></gmapjs>
             </div>
         </div>
     

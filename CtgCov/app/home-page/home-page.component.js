@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var HomePageComponent = (function () {
     function HomePageComponent() {
         this.name = 'HomePageComponent';
+        this.selectedState = "alabama";
     }
     return HomePageComponent;
 }());

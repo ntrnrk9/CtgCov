@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 declare var google: any;
 declare var MarkerClusterer: any;
 @Component({
@@ -11,7 +11,7 @@ export class GmapjsComponent {
     private name = 'GmapjsComponent';
     US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
     markers: any = [];
-    test: any = "Sydney, NSW";
+    @Input() state: any = "Sydney, NSW";
     constructor() { }
 
     map: any;
@@ -88,10 +88,10 @@ export class GmapjsComponent {
     address = "United States";
 
     geocodeAddress() {
-        alert(this.test);
+        alert(this.state);
         var geocoder = this.geocoder;
         var resultsMap = this.map;
-        var address = this.test;
+        var address = this.state;
         geocoder.geocode({ 'address': address }, function (results:any, status:any) {
             if (status === 'OK') {
                 var markerBounds = new google.maps.LatLngBounds();
@@ -100,6 +100,7 @@ export class GmapjsComponent {
                 console.log(results[0]);
                 resultsMap.fitBounds(results[0].geometry.viewport);
                 resultsMap.setZoom(6);
+                this.map = resultsMap;
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }

@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
     private name = 'HomePageComponent';
+    selectedState: any = "alabama";
 }
 
 // This code copy to app.module.ts
