@@ -70,7 +70,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><a class="pull-left" href="#" (click)="ccCheckAllFun()">Select All</a><a class="pull-right" href="#" (click)="ccClearAllFun()">Clear All</a></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.companyName)"/>{{item.companyName}}</li>
+                                <li *ngFor="let item of allCC|filterC:ccFil:'cmpName'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.cmpName)"/>{{item.cmpName}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
@@ -83,7 +83,7 @@
                         <div class="dropdown-menu no-padding mulSel-dd">
 
                             <div class="input-group">
-                                <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="ccFil">
+                                <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="plannerFil">
                                 <div class="input-group-btn">
                                     <button class="btn btn-default search-box" type="submit">
                                         <i class="glyphicon glyphicon-search"></i>
@@ -93,7 +93,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><a class="pull-left" href="#" (click)="ccCheckAllFun()">Select All</a><a class="pull-right" href="#" (click)="ccClearAllFun()">Clear All</a></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCC|filterC:ccFil:'companyName'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.companyName)" />{{item.companyName}}</li>
+                                <li *ngFor="let item of allPlanners|filterC:plannerFil:'planner'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.plannerCode)" />{{item.plannerCode}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()" />
