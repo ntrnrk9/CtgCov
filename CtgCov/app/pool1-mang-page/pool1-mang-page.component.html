@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
+                    <div *ngIf="choosenState.length>0" class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
                         <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{citySFlabel}} />
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
