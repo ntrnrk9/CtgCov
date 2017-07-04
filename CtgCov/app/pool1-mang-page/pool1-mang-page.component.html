@@ -179,7 +179,7 @@
                         </ng-container>
                     </tbody>
                 </table>
-                <div style="text-align:center"><a *ngIf="lLimit!=0" (click)="prevPage()">Previous</a><a style="padding:0px 30px 0px 30px;color:black">{{pageNumber+1}}</a><a (click)="nextPage()" *ngIf="uLimit!=data.length">Next</a></div>
+                <div style="text-align:center"><span class="pull-left">{{lLimit+1}}-{{uLimit}} of {{data.length}}</span><a *ngIf="lLimit!=0" (click)="prevPage()">Previous</a><a style="padding:0px 30px 0px 30px;color:black">{{pageNumber+1}}</a><a (click)="nextPage()" *ngIf="uLimit!=data.length">Next</a></div>
             </div>
             <!-- Trigger the modal with a button -->
             <!-- Modal -->

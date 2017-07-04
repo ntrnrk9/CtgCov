@@ -476,8 +476,8 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.nextPage = function () {
         console.log("nextPage");
         this.pageNumber += 1;
-        this.lLimit = this.pageNumber * 4;
-        this.uLimit = (this.pageNumber + 1) * 4;
+        this.lLimit = this.pageNumber * this.rowLimit;
+        this.uLimit = (this.pageNumber + 1) * this.rowLimit;
         if (this.uLimit > this.data.length) {
             this.uLimit = this.data.length;
         }
