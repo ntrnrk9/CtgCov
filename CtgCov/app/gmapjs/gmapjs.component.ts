@@ -11,16 +11,32 @@ export class GmapjsComponent {
     private name = 'GmapjsComponent';
     US_CENTER_LAT_LNG = { lat: 36.090240, lng: -95.712891 };
     markers: any = [];
-
+    test: any = "Sydney, NSW";
     constructor() { }
+
+    map: any;
+    geocoder: any = null;
+    selectedState: any;
+
     ngOnInit() {
+        this.geocoder = new google.maps.Geocoder();
         var bounds = new google.maps.LatLngBounds();
         var mapProp = {
             center: new google.maps.LatLng(36.090240, -95.712891),
             zoom: 4,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControl: true,
+            panControl: true,
+            zoomControl: true,
+            mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DROPDOWN_MENU },
+            scaleControl: true,
+            streetViewControl: true,
+            overviewMapControl: true,
+            rotateControl: true,
+            navigationControl: true
         };
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
 
         var myCenter = new google.maps.LatLng(36.090240, -95.712891);
         var marker = new google.maps.Marker({ position: myCenter });
@@ -58,15 +74,38 @@ export class GmapjsComponent {
             var position = new google.maps.LatLng(citymap[i].center.lat, citymap[i].center.lng);
             bounds.extend(position);
             marker = new google.maps.Marker({
-                position: position
+                position: position,
+                icon: citymap[i].icon
             });
 
             this.markers.push(marker);
         }
 
-        var markerCluster = new MarkerClusterer(map, this.markers,
+        var markerCluster = new MarkerClusterer(this.map, this.markers,
             { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
+        //this.findAddress(this.address);
     }
+    address = "United States";
+
+    geocodeAddress() {
+        alert(this.test);
+        var geocoder = this.geocoder;
+        var resultsMap = this.map;
+        var address = this.test;
+        geocoder.geocode({ 'address': address }, function (results:any, status:any) {
+            if (status === 'OK') {
+                var markerBounds = new google.maps.LatLngBounds();
+                resultsMap.setCenter(results[0].geometry.location);
+                markerBounds.extend(results[0].geometry.location);
+                console.log(results[0]);
+                resultsMap.fitBounds(results[0].geometry.viewport);
+                resultsMap.setZoom(6);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
 }
 
 // This code copy to app.module.ts

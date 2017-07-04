@@ -1,1 +1,5 @@
-﻿<div id="googleMap" style="width:100%;height:400px;"></div>
+﻿<div>
+    <input id="address" type="text" [(ngModel)]="test">
+    <input type="button" value="Encode" (click)="geocodeAddress()">
+</div>
+<div id="googleMap" style="width:100%;height:400px;"></div>
