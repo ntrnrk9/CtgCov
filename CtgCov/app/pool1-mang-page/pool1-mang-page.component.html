@@ -222,11 +222,11 @@
                                 <div class="row pu-row">
                                     <div class="col-md-6 orPad">
                                         <label>State</label><br />
-                                        <input class="no-padding col-md-12" style="border:none" readonly placeholder={{selectedState}} />
+                                        <input class="no-padding col-md-12" readonly placeholder={{selectedState}} />
                                     </div>
                                     <div class="col-md-6 olPad">
                                         <label>City</label><br />
-                                        <input class="no-padding col-md-12" style="border:none" readonly placeholder={{selectedCity}} />
+                                        <input class="no-padding col-md-12" readonly placeholder={{selectedCity}} />
                                     </div>
                                 </div>
                                 <div class="row pu-row">
@@ -240,7 +240,7 @@
                                 </div><div class="row pu-row">
                                     <div>
                                         <label>Required</label><br>
-                                        <input class="no-padding col-md-12" />
+                                        <input class="no-padding col-md-12" [(ngModel)]="reqPoolQat"/>
                                     </div>
                                 </div>
                                 <!--<div class="row pu-row">
@@ -255,8 +255,8 @@
                             </div>
                         </div>
                         <div class="modal-footer page-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success" data-dismiss="modal" (click)="add()">Save</button>
+                            <button type="button" class="btn btn-default" style="height:30px" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn pm-addBut" data-dismiss="modal" (click)="add()">Save</button>
                         </div>
                     </div>
 
@@ -286,8 +286,8 @@
                                 <div class="row pu-row">
                                     <div class="col-md-6 orPad">
                                         <label>Csr</label><br />
-                                        <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                                            <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{selectedCsr}} />
+                                        <div class="dropdown pull-left pm-select-cont" style="width:100%;border:1px solid silver;">
+                                            <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{selectedCsr}} style="width:91%"/>
                                             <span class="caret"></span>
                                             <div class="dropdown-menu no-padding mulSel-dd">
                                                 <div class="input-group">
@@ -305,11 +305,10 @@
                                         </div>
                                     </div><div class="col-md-6 olPad">
                                         <label>Planner</label><br />
-                                        <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                                            <button class="filters dropdown-toggle" type="button" data-toggle="dropdown">
-                                                {{selectedPlanner}}
+                                        <div class="dropdown pull-left pm-select-cont" style="width:100%;border:1px solid silver;">
+                                            <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{selectedPlanner}} style="width:91%"/>
                                                 <span class="caret"></span>
-                                            </button>
+                                            
                                             <div class="dropdown-menu no-padding mulSel-dd">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="plannerFil">
@@ -340,8 +339,8 @@
                             </div>
                         </div>
                         <div class="modal-footer page-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-success" data-dismiss="modal" (click)="updatePool()">Save</button>
+                            <button type="button" style="height:30px" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn pm-addBut" data-dismiss="modal" (click)="updatePool()">Save</button>
                         </div>
                     </div>
 

@@ -15,6 +15,7 @@ require("rxjs/add/operator/map");
 var Pool1MangPageComponent = (function () {
     function Pool1MangPageComponent(http) {
         this.http = http;
+        this.reqPoolQat = "";
         this.rowLimit = 10;
         this.pageNumber = 0;
         this.lLimit = this.pageNumber * 4;
@@ -457,9 +458,20 @@ var Pool1MangPageComponent = (function () {
         this.updateReqPool = this.poolToEdit.reqPool;
     };
     Pool1MangPageComponent.prototype.updatePool = function () {
+        var _this = this;
         this.poolToEdit.csr = this.selectedCsr;
         this.poolToEdit.planner = this.selectedPlanner;
         this.poolToEdit.reqPool = this.updateReqPool;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log("add: " + this.selectedState);
+        console.log("add: " + this.selectedCity);
+        //this.ob.groups.push(ele);
+        var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        this.http.post(url, this.poolToEdit, options).map(function (res) { return res.json(); })
+            .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
+        function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
+        );
     };
     Pool1MangPageComponent.prototype.selectCompany = function (item) {
         console.log(item);
@@ -493,6 +505,7 @@ var Pool1MangPageComponent = (function () {
         }
     };
     Pool1MangPageComponent.prototype.add = function () {
+        var _this = this;
         //alert("a");
         var ele = {
             state: "",
@@ -508,9 +521,37 @@ var Pool1MangPageComponent = (function () {
             toShow: true,
             pool: ""
         };
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        var data = {
+            'poolID': '',
+            'cmpID': '',
+            'planner': '',
+            'csr': '',
+            'reqPoolCount': 0,
+            'stateCode': '',
+            'stateName': '',
+            'companyName': '',
+            'cityName': '',
+            'avaiPoolCount': 0,
+            'variance': 0
+        };
+        data.cmpID = this.selectedCompany.cmpID;
+        data.csr = this.selectedCsr;
+        data.planner = this.selectedPlanner;
+        data.companyName = this.selectedCompany.cmpName;
+        data.reqPoolCount = this.reqPoolQat;
+        data.cityName = this.selectedCompany.cityName;
+        data.stateName = this.selectedCompany.stateName;
+        data.stateCode = this.selectedCompany.stateCode;
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         //this.ob.groups.push(ele);
+        var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        this.http.post(url, data, options).map(function (res) { return res.json(); })
+            .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
+        function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
+        );
     };
     return Pool1MangPageComponent;
 }());

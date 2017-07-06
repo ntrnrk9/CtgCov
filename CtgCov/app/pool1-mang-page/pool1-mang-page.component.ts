@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
     //pipes: [FilterCPipe]
 })
 export class Pool1MangPageComponent {
+        reqPoolQat: any="";
     rowLimit: any = 10;
     pageNumber: any = 0;
     lLimit: any = this.pageNumber * 4;
@@ -28,7 +29,7 @@ export class Pool1MangPageComponent {
     allCsr: any;
     asc = true;
     //[name: string]: any;
-    
+
     private name = 'Pool1Mang-pageComponent';
     cityFil: String = "";
     stateFil: String = "";
@@ -71,7 +72,7 @@ export class Pool1MangPageComponent {
         toShow: true,
         pool: ""
     };
-    choosenState:any = [];
+    choosenState: any = [];
     choosenCity: any = [];
     choosenCC: any = [];
 
@@ -118,12 +119,12 @@ export class Pool1MangPageComponent {
         this.choosenState = [];
     }
 
-    private stateCheckEvent(item:any,value:any) {
+    private stateCheckEvent(item: any, value: any) {
         console.log(item);
         var index = this.inArray(this.choosenState, value);
         if (item) {
             console.log("selected");
-            if (index!=-1) { } else {
+            if (index != -1) { } else {
                 this.choosenState.push(value);
             }
         } else {
@@ -165,16 +166,16 @@ export class Pool1MangPageComponent {
 
     private masterFilter() {
         var temp = JSON.parse(JSON.stringify(this.result));
-        temp=this.filterByState(temp);
-        temp=this.filterByCity(temp);
-        temp=this.filterByCC(temp);
+        temp = this.filterByState(temp);
+        temp = this.filterByCity(temp);
+        temp = this.filterByCC(temp);
         this.data = JSON.parse(JSON.stringify(temp));
         this.resetPage();
     }
 
-    private filterByState(result:any) {
+    private filterByState(result: any) {
         var temp = JSON.parse(JSON.stringify(result));
-        
+
         if (this.choosenState.length == 0) {
             this.stateSFlabel = "Select a state";
             return result;
@@ -191,10 +192,10 @@ export class Pool1MangPageComponent {
             //this.resetPage();
         }
         return temp;
-        
+
     }
 
-    private filterByCity(result:any) {
+    private filterByCity(result: any) {
         console.log("filter by city");
         var temp = JSON.parse(JSON.stringify(result));
 
@@ -216,7 +217,7 @@ export class Pool1MangPageComponent {
         //this.resetPage();
     }
 
-    private filterByCC(result:any) {
+    private filterByCC(result: any) {
         var temp = JSON.parse(JSON.stringify(result));
 
         if (this.choosenCC.length == 0) {
@@ -394,12 +395,12 @@ export class Pool1MangPageComponent {
         //alert("hi");
         let headers = new Headers({ 'Content-Type': 'text/plain' });
         let options = new RequestOptions({ headers: headers });
-        let obj = {'stateCode': "AR"};
+        let obj = { 'stateCode': "AR" };
         let url1 = "http://192.168.1.37/TrailersCheck.asmx/GetCityByState?stateCode=AR";
         let url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCities";
         this.http.get(url1).map(res => res.json())
             .subscribe(
-            (data) => {console.log("getAllCities data recieved "); this.allCities = data; }, //For Success Response
+            (data) => { console.log("getAllCities data recieved "); this.allCities = data; }, //For Success Response
             (err) => { console.log("getAllCities error recieved "); } //For Error Response
             );
     }
@@ -477,6 +478,21 @@ export class Pool1MangPageComponent {
         this.poolToEdit.csr = this.selectedCsr;
         this.poolToEdit.planner = this.selectedPlanner;
         this.poolToEdit.reqPool = this.updateReqPool;
+
+        
+        let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        let options = new RequestOptions({ headers: headers });
+        
+        console.log("add: " + this.selectedState);
+        console.log("add: " + this.selectedCity);
+        //this.ob.groups.push(ele);
+        let url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        this.http.post(url, this.poolToEdit, options).map(res => res.json())
+            .subscribe(
+            (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
+            (err) => { console.log("getAllPlanner error recieved"); } //For Error Response
+            );
+
     }
 
     selectCompany(item: any) {
@@ -499,7 +515,7 @@ export class Pool1MangPageComponent {
         this.pageNumber += 1;
         this.lLimit = this.pageNumber * this.rowLimit;
         this.uLimit = (this.pageNumber + 1) * this.rowLimit;
-        if (this.uLimit>this.data.length) {
+        if (this.uLimit > this.data.length) {
             this.uLimit = this.data.length;
         }
         console.log("nextPage " + this.uLimit);
@@ -514,7 +530,7 @@ export class Pool1MangPageComponent {
             this.lLimit = 0;
         }
     }
-    
+
     add() {
         //alert("a");
         var ele = {
@@ -531,9 +547,40 @@ export class Pool1MangPageComponent {
             toShow: true,
             pool: ""
         };
+        let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        let options = new RequestOptions({ headers: headers });
+        var data = {
+            'poolID': '',
+            'cmpID': '',
+            'planner': '',
+            'csr': '',
+            'reqPoolCount': 0,
+            'stateCode': '',
+            'stateName': '',
+            'companyName': '',
+            'cityName': '',
+            'avaiPoolCount': 0,
+            'variance': 0
+        };
+
+        data.cmpID = this.selectedCompany.cmpID;
+        data.csr = this.selectedCsr;
+        data.planner = this.selectedPlanner;
+        data.companyName = this.selectedCompany.cmpName;
+        data.reqPoolCount = this.reqPoolQat;
+        data.cityName = this.selectedCompany.cityName;
+        data.stateName = this.selectedCompany.stateName;
+        data.stateCode = this.selectedCompany.stateCode;
+
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         //this.ob.groups.push(ele);
+        let url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        this.http.post(url, data, options).map(res => res.json())
+            .subscribe(
+            (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
+            (err) => { console.log("getAllPlanner error recieved"); } //For Error Response
+            );
     }
 }
 
