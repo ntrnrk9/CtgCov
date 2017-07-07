@@ -83,96 +83,88 @@ var Pool1MangPageComponent = (function () {
         this.choosenCC = [];
         this.ob = {
             groups: [{
-                    state: "AL",
-                    city: "Birmingham",
+                    stateCode: "AL",
+                    cityName: "Birmingham",
                     csr: "Mike",
                     planner: "Mike",
-                    company: "Valspar",
-                    reqPool: "1",
-                    curr: "1",
+                    companyName: "Valspar",
+                    reqPoolCount: 1,
+                    avaiPoolCount: 1,
                     variance: 0,
-                    twm: "VALBIRG02",
-                    totReq: "1",
+                    cmpID: "VALBIRG02",
                     toShow: true,
-                    pool: "WALBEN34"
+                    poolID: "WALBEN34"
                 }, {
-                    state: "AL",
-                    city: "Birmingham",
+                    stateCode: "AL",
+                    cityName: "Birmingham",
                     csr: "Kevin",
                     planner: "DANNY",
-                    company: "Averitt",
-                    reqPool: "2",
-                    curr: "1",
+                    companyName: "Averitt",
+                    reqPoolCount: 2,
+                    avaiPoolCount: 1,
                     variance: -1,
-                    twm: "AVEBIR",
-                    totReq: "2",
+                    cmpID: "AVEBIR",
                     toShow: true,
-                    pool: "BROTYLI07"
+                    poolID: "BROTYLI07"
                 }, {
-                    state: "AL",
-                    city: "Cullman",
+                    stateCode: "AL",
+                    cityName: "Cullman",
                     csr: "Sarah",
                     planner: "DANNY",
-                    company: "Serta",
-                    reqPool: "4",
-                    curr: "1",
+                    companyName: "Serta",
+                    reqPoolCount: 4,
+                    avaiPoolCount: 1,
                     variance: 3,
-                    twm: "SERCUL02",
-                    totReq: "4",
+                    cmpID: "SERCUL02",
                     toShow: true,
-                    pool: "TOOCH98"
+                    poolID: "TOOCH98"
                 }, {
-                    state: "AL",
-                    city: "Gentry",
+                    stateCode: "AL",
+                    cityName: "Gentry",
                     csr: "David",
                     planner: "Molly",
-                    company: "Walmart 6008",
-                    reqPool: "6",
-                    curr: "2",
+                    companyName: "Walmart 6008",
+                    reqPoolCount: 6,
+                    avaiPoolCount: 2,
                     variance: 4,
-                    twm: "MCK",
-                    totReq: "6",
-                    toShow: true,
-                    pool: "MARMAN06"
+                    cmpID: "MCK",
+                    poolID: "MARMAN06"
                 }, {
-                    state: "AR",
-                    city: "North Little Rock",
+                    stateCode: "AR",
+                    cityName: "North Little Rock",
                     csr: "Mike",
                     planner: "Mike",
-                    company: "Valspar",
-                    reqPool: "10",
-                    curr: "5",
+                    companyName: "Valspar",
+                    reqPoolCount: 10,
+                    avaiPoolCount: 5,
                     variance: 5,
-                    twm: "VALBIRG02",
-                    totReq: "10",
+                    cmpID: "VALBIRG02",
                     toShow: true,
-                    pool: "FREGRA06"
+                    poolID: "FREGRA06"
                 }, {
-                    state: "AZ",
-                    city: "Phoenix",
+                    stateCode: "AZ",
+                    cityName: "Phoenix",
                     csr: "Mike",
                     planner: "Mike",
-                    company: "Valspar",
-                    reqPool: "13",
-                    curr: "1",
+                    companyName: "Valspar",
+                    reqPoolCount: 13,
+                    avaiPoolCount: 1,
                     variance: 12,
-                    twm: "VALBIRG02",
-                    totReq: "13",
+                    cmpID: "VALBIRG02",
                     toShow: true,
-                    pool: "FORFORG6"
+                    poolID: "FORFORG6"
                 }, {
-                    state: "AL",
-                    city: "Birmingham",
+                    stateCode: "AL",
+                    cityName: "Birmingham",
                     csr: "Mike",
                     planner: "Mike",
-                    company: "Valspar",
-                    reqPool: "11",
-                    curr: "2",
+                    companyName: "Valspar",
+                    reqPoolCount: 11,
+                    avaiPoolCount: 2,
                     variance: 9,
-                    twm: "VALBIRG02",
-                    totReq: "11",
+                    cmpID: "VALBIRG02",
                     toShow: true,
-                    pool: "WALBEN34"
+                    poolID: "WALBEN34"
                 }],
             column: ["State", "City", "TMW", "Company", "CSR", "Planner", "Req Pool", "Current", "Variance", "Action"]
         };
@@ -291,12 +283,13 @@ var Pool1MangPageComponent = (function () {
     };
     Pool1MangPageComponent.prototype.filterByState = function (result) {
         var temp = JSON.parse(JSON.stringify(result));
+        this.allStates1 = JSON.parse(JSON.stringify(this.allStates));
         if (this.choosenState.length == 0) {
             this.stateSFlabel = "Select a state";
             return result;
         }
         else {
-            this.stateSFlabel = this.choosenState.length + " option choosen";
+            this.stateSFlabel = this.choosenState.length + " state choosen";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenState, temp[i].state) != -1) {
                 }
@@ -313,12 +306,13 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.filterByCity = function (result) {
         console.log("filter by city");
         var temp = JSON.parse(JSON.stringify(result));
+        this.allCities1 = JSON.parse(JSON.stringify(this.allCities));
         if (this.choosenCity.length == 0) {
             this.citySFlabel = "Select a city";
             return result;
         }
         else {
-            this.citySFlabel = this.choosenCity.length + " option choosen";
+            this.citySFlabel = this.choosenCity.length + " city choosen";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCity, temp[i].city) != -1) {
                 }
@@ -334,12 +328,13 @@ var Pool1MangPageComponent = (function () {
     };
     Pool1MangPageComponent.prototype.filterByCC = function (result) {
         var temp = JSON.parse(JSON.stringify(result));
+        this.allCC1 = JSON.parse(JSON.stringify(this.allCC));
         if (this.choosenCC.length == 0) {
             this.ccSFlabel = 'Customer\Company';
             return result;
         }
         else {
-            this.ccSFlabel = this.choosenCC.length + " option choosen";
+            this.ccSFlabel = this.choosenCC.length + " conpany choosen";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCC, temp[i].company) != -1) {
                 }
@@ -375,24 +370,24 @@ var Pool1MangPageComponent = (function () {
             var j = _a[_i];
             if (value == 0) {
                 if (j.variance == 0) {
-                    j.toShow = true;
+                    //j.toShow = true;
                     this.result.push(j);
                 }
                 else {
-                    j.toShow = false;
+                    //j.toShow = false;
                 }
             }
             else if (value == 1) {
-                if (j.variance > 0) {
-                    j.toShow = true;
+                if (j.variance > 0 || j.variance < 0) {
+                    //j.toShow = true;
                     this.result.push(j);
                 }
                 else {
-                    j.toShow = false;
+                    //j.toShow = false;
                 }
             }
             else if (value == -1) {
-                j.toShow = true;
+                //j.toShow = true;
                 this.result.push(j);
             }
         }
@@ -480,12 +475,10 @@ var Pool1MangPageComponent = (function () {
             this.allCC[i].isSelected = this.allCC1[i].isSelected;
     };
     Pool1MangPageComponent.prototype.restoreStateList = function () {
-        alert("asdf");
         for (var i = 0; i < this.allCC1.length; i++)
             this.allStates[i].isSelected = this.allStates1[i].isSelected;
     };
     Pool1MangPageComponent.prototype.restoreCityList = function () {
-        alert("asdf");
         for (var i = 0; i < this.allCC1.length; i++)
             this.allCities[i].isSelected = this.allCities1[i].isSelected;
     };
@@ -497,16 +490,16 @@ var Pool1MangPageComponent = (function () {
     };
     Pool1MangPageComponent.prototype.toEdit = function (index) {
         console.log(index);
-        this.poolToEdit = this.ob.groups[index];
+        this.poolToEdit = this.data[index];
         this.selectedPlanner = this.poolToEdit.planner;
         this.selectedCsr = this.poolToEdit.csr;
-        this.updateReqPool = this.poolToEdit.reqPool;
+        this.updateReqPool = this.poolToEdit.reqPoolCount;
     };
     Pool1MangPageComponent.prototype.updatePool = function () {
         var _this = this;
         this.poolToEdit.csr = this.selectedCsr;
         this.poolToEdit.planner = this.selectedPlanner;
-        this.poolToEdit.reqPool = this.updateReqPool;
+        this.poolToEdit.reqPoolCount = this.updateReqPool;
         var headers = new http_1.Headers({ 'Content-Type': 'application/json; charset=utf-8' });
         var options = new http_1.RequestOptions({ headers: headers });
         console.log("add: " + this.selectedState);
@@ -517,6 +510,11 @@ var Pool1MangPageComponent = (function () {
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
         );
+    };
+    Pool1MangPageComponent.prototype.cancelUpdatePool = function () {
+        this.selectedCsr;
+        this.selectedPlanner;
+        this.updateReqPool = 0;
     };
     Pool1MangPageComponent.prototype.selectCompany = function (item) {
         console.log(item);
@@ -591,7 +589,7 @@ var Pool1MangPageComponent = (function () {
         data.stateCode = this.selectedCompany.stateCode;
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
-        //this.ob.groups.push(ele);
+        this.ob.groups.push(data);
         var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
         this.http.post(url, data, options).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
