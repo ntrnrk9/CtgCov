@@ -12,3 +12,38 @@
     padding: 0px 20px 20px 20px;
     margin-top: 10px;
 }
+
+.pm-select-cont {
+    background-color: white;
+    padding-right: 4px;
+}
+
+.mulSel-dd {
+    width: 198px;
+    border-radius: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.mulSel-dd-ul {
+    padding: 5px 0px 5px 0px;
+    list-style: none;
+    margin-bottom: 0px;
+    height: 129px;
+    overflow-y: scroll;
+    margin: 5px 0px 5px 0px;
+}
+
+.search-box {
+    height: 30px;
+    border-radius: 0px;
+}
+
+.filters {
+    background-color: white;
+    padding: 5px;
+    width: 140px;
+    text-align: left;
+    border: none;
+}
