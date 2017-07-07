@@ -173,3 +173,7 @@ li {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+.pu-selAll{
+    border:none;
+    background-color:white;
+}
