@@ -108,6 +108,23 @@ export class Pool1MangPageComponent {
         }
     }
 
+    private plannerCheckAllFun() {
+        //this.ccCheckAll = true;
+        this.choosenPlanner = [];
+        for (var i = 0; i < this.allPlanners.length; i++) {
+            this.choosenPlanner.push(this.allPlanners[i].planner);
+            this.allPlanners[i].isSelected = true;
+        }
+    }
+
+    private plannerClearAllFun() {
+        //this.ccCheckAll = false;
+        this.choosenPlanner = [];
+        for (var i = 0; i < this.allPlanners.length; i++) {
+            this.allPlanners[i].isSelected = false;
+        }
+    }
+
     private cityCheckAllFun() {
         this.cityCheckAll = true;
         this.choosenCity = [];

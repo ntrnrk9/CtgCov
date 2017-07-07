@@ -197,6 +197,21 @@ var Pool1MangPageComponent = (function () {
             this.allCC[i].isSelected = false;
         }
     };
+    Pool1MangPageComponent.prototype.plannerCheckAllFun = function () {
+        //this.ccCheckAll = true;
+        this.choosenPlanner = [];
+        for (var i = 0; i < this.allPlanners.length; i++) {
+            this.choosenPlanner.push(this.allPlanners[i].planner);
+            this.allPlanners[i].isSelected = true;
+        }
+    };
+    Pool1MangPageComponent.prototype.plannerClearAllFun = function () {
+        //this.ccCheckAll = false;
+        this.choosenPlanner = [];
+        for (var i = 0; i < this.allPlanners.length; i++) {
+            this.allPlanners[i].isSelected = false;
+        }
+    };
     Pool1MangPageComponent.prototype.cityCheckAllFun = function () {
         this.cityCheckAll = true;
         this.choosenCity = [];

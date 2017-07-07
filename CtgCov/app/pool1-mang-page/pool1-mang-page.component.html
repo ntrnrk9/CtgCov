@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <ul class="mulSel-dd-ul">
-                                <li><input class="pull-left pu-selAll" type="button" (click)="ccCheckAllFun()" value="Select All" /><input class="pull-right pu-selAll" type="button" (click)="ccClearAllFun()" value="Clear All" /></li>
+                                <li><input class="pull-left pu-selAll" type="button" (click)="plannerCheckAllFun()" value="Select All" /><input class="pull-right pu-selAll" type="button" (click)="plannerClearAllFun()" value="Clear All" /></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
                                 <li *ngFor="let item of allPlanners|filterC:plannerFil:'planner'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="plannerCheckEvent($event.target.checked,item.planner)" />{{item.planner}}</li>
                             </ul>
