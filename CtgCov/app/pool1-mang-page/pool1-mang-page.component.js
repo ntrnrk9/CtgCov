@@ -103,7 +103,7 @@ var Pool1MangPageComponent = (function () {
                     company: "Averitt",
                     reqPool: "2",
                     curr: "1",
-                    variance: 1,
+                    variance: -1,
                     twm: "AVEBIR",
                     totReq: "2",
                     toShow: true,
@@ -597,6 +597,12 @@ var Pool1MangPageComponent = (function () {
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
         );
+    };
+    Pool1MangPageComponent.prototype.cancelAdd = function () {
+        this.reqPoolQat = 0;
+        this.selectedCompany = "Select a company";
+        this.selectedCsr = "Select a Csr";
+        this.selectedPlanner = "Select a planner";
     };
     return Pool1MangPageComponent;
 }());

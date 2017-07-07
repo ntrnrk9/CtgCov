@@ -545,6 +545,13 @@ export class Pool1MangPageComponent {
 
     }
 
+    private cancelUpdatePool() {
+        this.selectedCsr;
+        this.selectedPlanner;
+        this.updateReqPool=0;
+        
+    }
+
     selectCompany(item: any) {
         console.log(item);
         this.selectedCompany = item;
@@ -631,6 +638,14 @@ export class Pool1MangPageComponent {
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
             (err) => { console.log("getAllPlanner error recieved"); } //For Error Response
             );
+    }
+
+    private cancelAdd() {
+        this.reqPoolQat = 0;
+        this.selectedCompany = "Select a company";
+        this.selectedCsr = "Select a Csr";
+        this.selectedPlanner= "Select a planner";
+
     }
 }
 
