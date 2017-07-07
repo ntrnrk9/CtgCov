@@ -14,7 +14,7 @@
                     </select>
                     
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{ccSFlabel}} />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{ccSFlabel}} (click)="restoreccList()"/>
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
@@ -29,7 +29,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><input class="pull-left pu-selAll" type="button" (click)="ccCheckAllFun()" value="Select All"/><input class="pull-right pu-selAll" type="button" (click)="ccClearAllFun()" value="Clear All"/></li>
                                 <!--<li *ngFor="let item of ccList| filterArray:ccFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCC|filterC:ccFil:'cmpName'"><input type="checkbox" value="" [checked]="ccCheckAll" (change)="ccCheckEvent($event.target.checked,item.cmpName)"/>{{item.cmpName}}</li>
+                                <li *ngFor="let item of allCC|filterC:ccFil:'cmpName'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="ccCheckEvent($event.target.checked,item.cmpName)"/>{{item.cmpName}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()"/>
@@ -67,7 +67,7 @@
                     </select>
 
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{stateSFlabel}} />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{stateSFlabel}} (click)="restoreStateList()"/>
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
                             <div class="input-group">
@@ -82,7 +82,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><input class="pull-left pu-selAll" type="button" (click)="stateCheckAllFun()" value="Select All" /><input class="pull-right pu-selAll" type="button" (click)="stateClearAllFun()" value="Clear All" /></li>
                                 <!--<li *ngFor="let item of countryList| filterArray:stateFil"><input type="checkbox" value=""/>{{item}}</li>-->
-                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" [checked]="stateCheckAll" (change)="stateCheckEvent($event.target.checked,item.stateCode)" />{{item.stateCode}}</li>
+                                <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="stateCheckEvent($event.target.checked,item.stateCode)" />{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()" />
@@ -91,7 +91,7 @@
                     </div>
 
                     <div *ngIf="choosenState.length>0" class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{citySFlabel}} />
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{citySFlabel}} (click)="restoreCityList()"/>
                         <span class="caret"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
@@ -106,7 +106,7 @@
                             <ul class="mulSel-dd-ul">
                                 <li><input class="pull-left pu-selAll" type="button" (click)="cityCheckAllFun()" value="Select All" /><input class="pull-right pu-selAll" type="button" (click)="cityClearAllFun()" value="Clear All" /></li>
                                 <!--<li *ngFor="let item of cityList| filterArray:cityFil"><input type="checkbox" value="" />{{item}}</li>-->
-                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" [checked]="cityCheckAll" (change)="cityCheckEvent($event.target.checked,item.cityName)" />{{item.cityName}}</li>
+                                <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="cityCheckEvent($event.target.checked,item.cityName)" />{{item.cityName}}</li>
                             </ul>
                             <div class="div-center">
                                 <input type="button" class="btn btn-default" value="Apply" (click)="masterFilter()" />
