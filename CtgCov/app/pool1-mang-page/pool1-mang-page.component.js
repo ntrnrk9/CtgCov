@@ -22,7 +22,7 @@ var Pool1MangPageComponent = (function () {
         this.uLimit = (this.pageNumber + 1) * 4;
         this.stateSFlabel = "Select a state";
         this.citySFlabel = "Select a city";
-        this.ccSFlabel = 'Customer\Company';
+        this.ccSFlabel = 'Customer\\Company';
         this.plannerSFlabel = 'Planner';
         this.selectedCompany = "Select a company";
         this.selectedState = "Select a state";
@@ -366,7 +366,7 @@ var Pool1MangPageComponent = (function () {
         var temp = JSON.parse(JSON.stringify(result));
         this.allCC1 = JSON.parse(JSON.stringify(this.allCC));
         if (this.choosenCC.length == 0) {
-            this.ccSFlabel = 'Customer\Company';
+            this.ccSFlabel = 'Customer\\Company';
             return result;
         }
         else {
@@ -548,7 +548,7 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.restorePlannerList = function () {
         this.plannerFil = "";
         for (var i = 0; i < this.allCC1.length; i++)
-            this.allPlanners[i].isSelected = this.allPlanners1[i].isSelected;
+            this.allPlanners[i]['isSelected'] = this.allPlanners1[i]['isSelected'];
     };
     Pool1MangPageComponent.prototype.insertSelected = function (items) {
         for (var i = 0; i < items.length; i++) {
@@ -617,21 +617,6 @@ var Pool1MangPageComponent = (function () {
     };
     Pool1MangPageComponent.prototype.add = function () {
         var _this = this;
-        //alert("a");
-        var ele = {
-            state: "",
-            city: "",
-            csr: "",
-            planner: "",
-            company: "",
-            reqPool: "",
-            curr: "",
-            variance: 0,
-            twm: "",
-            totReq: "",
-            toShow: true,
-            pool: ""
-        };
         var headers = new http_1.Headers({ 'Content-Type': 'application/json; charset=utf-8' });
         var options = new http_1.RequestOptions({ headers: headers });
         var data = {
@@ -652,23 +637,33 @@ var Pool1MangPageComponent = (function () {
         data.planner = this.selectedPlanner;
         data.companyName = this.selectedCompany.cmpName;
         data.reqPoolCount = this.reqPoolQat;
+        data.variance = this.reqPoolQat;
         data.cityName = this.selectedCompany.cityName;
         data.stateName = this.selectedCompany.stateName;
         data.stateCode = this.selectedCompany.stateCode;
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         this.ob.groups.push(data);
+        if (this.selectedVarience == 1 || this.selectedVarience == -1) {
+            this.data.push(data);
+        }
+        console.log("add: " + this.ob.groups);
         var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
         this.http.post(url, data, options).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
         );
+        this.cancelAdd();
+        this.resetPage();
     };
     Pool1MangPageComponent.prototype.cancelAdd = function () {
         this.reqPoolQat = 0;
         this.selectedCompany = "Select a company";
         this.selectedCsr = "Select a Csr";
         this.selectedPlanner = "Select a planner";
+    };
+    Pool1MangPageComponent.prototype.toAdd = function () {
+        this.cancelAdd();
     };
     return Pool1MangPageComponent;
 }());

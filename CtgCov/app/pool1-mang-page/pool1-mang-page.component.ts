@@ -18,7 +18,7 @@ export class Pool1MangPageComponent {
     uLimit: any = (this.pageNumber + 1) * 4;
     stateSFlabel: any = "Select a state";
     citySFlabel: any = "Select a city";
-    ccSFlabel: any = 'Customer\Company';
+    ccSFlabel: any = 'Customer\\Company';
     plannerSFlabel: any = 'Planner';
     selectedCompany: any = "Select a company";
     selectedState: any = "Select a state";
@@ -282,7 +282,7 @@ export class Pool1MangPageComponent {
         var temp = JSON.parse(JSON.stringify(result));
         this.allCC1 = JSON.parse(JSON.stringify(this.allCC));
         if (this.choosenCC.length == 0) {
-            this.ccSFlabel = 'Customer\Company';
+            this.ccSFlabel = 'Customer\\Company';
             return result;
         } else {
             this.ccSFlabel = this.choosenCC.length + " conpany choosen";
@@ -575,7 +575,7 @@ export class Pool1MangPageComponent {
     private restorePlannerList() {
         this.plannerFil = "";
         for (var i = 0; i < this.allCC1.length; i++)
-            this.allPlanners[i].isSelected = this.allPlanners1[i].isSelected;
+            this.allPlanners[i]['isSelected'] = this.allPlanners1[i]['isSelected'];
     }
 
     private insertSelected(items:any) {
@@ -668,21 +668,7 @@ export class Pool1MangPageComponent {
     }
 
     add() {
-        //alert("a");
-        var ele = {
-            state: "",
-            city: "",
-            csr: "",
-            planner: "",
-            company: "",
-            reqPool: "",
-            curr: "",
-            variance: 0,
-            twm: "",
-            totReq: "",
-            toShow: true,
-            pool: ""
-        };
+        
         let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
         let options = new RequestOptions({ headers: headers });
         var data = {
@@ -704,6 +690,7 @@ export class Pool1MangPageComponent {
         data.planner = this.selectedPlanner;
         data.companyName = this.selectedCompany.cmpName;
         data.reqPoolCount = this.reqPoolQat;
+        data.variance = this.reqPoolQat;
         data.cityName = this.selectedCompany.cityName;
         data.stateName = this.selectedCompany.stateName;
         data.stateCode = this.selectedCompany.stateCode;
@@ -711,12 +698,19 @@ export class Pool1MangPageComponent {
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         this.ob.groups.push(data);
+        if (this.selectedVarience == 1 || this.selectedVarience == -1){
+            this.data.push(data);
+        }
+        console.log("add: " + this.ob.groups);
         let url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
         this.http.post(url, data, options).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
             (err) => { console.log("getAllPlanner error recieved"); } //For Error Response
             );
+        this.cancelAdd();
+        this.resetPage();
+        
     }
 
     private cancelAdd() {
@@ -725,6 +719,10 @@ export class Pool1MangPageComponent {
         this.selectedCsr = "Select a Csr";
         this.selectedPlanner= "Select a planner";
 
+    }
+
+    private toAdd() {
+        this.cancelAdd();
     }
 }
 
