@@ -80,8 +80,8 @@ export class GmapjsComponent {
             let marker = new google.maps.Marker({
                 position: this.boundList1[i].location,
                 map: this.map,
-                label: { text: '1234',color:'white' },
-                icon: '../../assets/images/markers/move-1.png'
+                label: { text: '01234', color: '#000', fontSize:'11px' },
+                icon: '../../assets/images/markers/state-pointer.png'
             });
 
             this.markers.push(marker);

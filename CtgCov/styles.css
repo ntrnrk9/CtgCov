@@ -34,3 +34,16 @@ body {
 .container{
     width:100%;
 }
+
+input[type="button"] {
+
+    outline: none;
+}
+
+button{
+    outline: none;
+}
+
+select {
+    border: none;
+}

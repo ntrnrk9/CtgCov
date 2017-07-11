@@ -239,7 +239,7 @@ export class Pool1MangPageComponent {
             this.stateSFlabel = "Select a state";
             return result;
         } else {
-            this.stateSFlabel = this.choosenState.length + " state choosen";
+            this.stateSFlabel = this.choosenState.length + " state selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenState, temp[i].stateCode) != -1) {
 
@@ -263,7 +263,7 @@ export class Pool1MangPageComponent {
             this.citySFlabel = "Select a city";
             return result;
         } else {
-            this.citySFlabel = this.choosenCity.length + " city choosen";
+            this.citySFlabel = this.choosenCity.length + " city selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCity, temp[i].cityName) != -1) {
 
@@ -285,7 +285,7 @@ export class Pool1MangPageComponent {
             this.ccSFlabel = 'Customer\\Company';
             return result;
         } else {
-            this.ccSFlabel = this.choosenCC.length + " conpany choosen";
+            this.ccSFlabel = this.choosenCC.length + " company selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCC, temp[i].companyName) != -1) {
 
@@ -308,7 +308,7 @@ export class Pool1MangPageComponent {
             this.plannerSFlabel = 'Select a planner';
             return result;
         } else {
-            this.plannerSFlabel = this.choosenPlanner.length + " planner choosen";
+            this.plannerSFlabel = this.choosenPlanner.length + " planner selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenPlanner, temp[i].planner) != -1) {
 

@@ -91,6 +91,8 @@
     <Content Include="app\footer1\footer1.component.html" />
     <Content Include="app\footer\footer.component.css" />
     <Content Include="app\footer\footer.component.html" />
+    <Content Include="app\gmapjs\gmapjs.component.css" />
+    <Content Include="app\gmapjs\gmapjs.component.html" />
     <Content Include="app\gmaps\gmaps.component.css" />
     <Content Include="app\gmaps\gmaps.component.html" />
     <Content Include="app\header\header.component.css" />
@@ -103,6 +105,9 @@
     <Content Include="app\pool-mang-page\pool-mang-page.component.html" />
     <Content Include="app\pool1-mang-page\pool1-mang-page.component.css" />
     <Content Include="app\pool1-mang-page\pool1-mang-page.component.html" />
+    <Content Include="app\searchfilter\searchfilter.component.css" />
+    <Content Include="app\searchfilter\searchfilter.component.html" />
+    <Content Include="app\searchfilter\searchfilter.component.js" />
     <Content Include="app\table\table.component.css" />
     <Content Include="app\table\table.component.html" />
     <Content Include="app\yard-mang-page\yard-mang-page.component.css" />
@@ -126,6 +131,7 @@
     <Content Include="assets\images\markers\idle3.png" />
     <Content Include="assets\images\markers\idle4.png" />
     <Content Include="assets\images\markers\idle5.png" />
+    <Content Include="assets\images\markers\legend.png" />
     <Content Include="assets\images\markers\marker-org.png" />
     <Content Include="assets\images\markers\move-1.png" />
     <Content Include="assets\images\markers\move-2.png" />
@@ -143,6 +149,7 @@
     <Content Include="assets\images\markers\running3.png" />
     <Content Include="assets\images\markers\running4.png" />
     <Content Include="assets\images\markers\running5.png" />
+    <Content Include="assets\images\markers\state-pointer.png" />
     <Content Include="assets\images\markers\test.gif" />
     <Content Include="assets\images\markers\trailer-blue.png" />
     <Content Include="assets\images\markers\trailer-green.png" />
@@ -176,6 +183,7 @@
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="assets\.gitkeep" />
+    <Content Include="app\searchfilter\searchfilter.component.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,6 +207,7 @@
     <TypeScriptCompile Include="app\Filters\filterC.pipe.ts" />
     <TypeScriptCompile Include="app\footer1\footer1.component.ts" />
     <TypeScriptCompile Include="app\footer\footer.component.ts" />
+    <TypeScriptCompile Include="app\gmapjs\gmapjs.component.ts" />
     <TypeScriptCompile Include="app\gmaps\gmaps.component.ts" />
     <TypeScriptCompile Include="app\header\header.component.ts" />
     <TypeScriptCompile Include="app\home-page\home-page.component.ts" />
@@ -206,6 +215,7 @@
     <TypeScriptCompile Include="app\mainTabs\mainTabs.component.ts" />
     <TypeScriptCompile Include="app\pool-mang-page\pool-mang-page.component.ts" />
     <TypeScriptCompile Include="app\pool1-mang-page\pool1-mang-page.component.ts" />
+    <TypeScriptCompile Include="app\searchfilter\searchfilter.component.ts" />
     <TypeScriptCompile Include="app\table\table.component.ts" />
     <TypeScriptCompile Include="app\yard-mang-page\yard-mang-page.component.ts" />
   </ItemGroup>

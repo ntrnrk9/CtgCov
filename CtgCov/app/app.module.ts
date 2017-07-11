@@ -7,6 +7,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { AgmCoreModule } from '@agm/core';
 import { AlertModule } from 'ngx-bootstrap';
+import { NgxPaginationModule, PaginatePipe, PaginationService } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 
@@ -28,7 +29,7 @@ import { FilterCPipe } from './Filters/filterC.pipe';
 import { FilterArrayPipe } from './Filters/filterArray.pipe';
 
 @NgModule({
-    imports: [BrowserModule, HttpModule, CommonModule, FormsModule,
+    imports: [BrowserModule, HttpModule, CommonModule, FormsModule, NgxPaginationModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyAafsMtGWbhgmfXU1TV-K-VUh8y1d8jZjI'
         })],

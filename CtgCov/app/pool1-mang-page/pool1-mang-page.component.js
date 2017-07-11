@@ -370,7 +370,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.ccSFlabel = this.choosenCC.length + " conpany choosen";
+            this.ccSFlabel = this.choosenCC.length + " company choosen";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCC, temp[i].companyName) != -1) {
                 }
