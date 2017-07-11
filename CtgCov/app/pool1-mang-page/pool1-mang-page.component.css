@@ -8,12 +8,17 @@
     margin-bottom: 0px;
 }
 
+    .app-table thead tr {
+        background-color: #22466f;
+        color: #fff;
+    }
+
 .app-table-tr {
     padding: 15px;
 }
 
 .app-table tr {
-    height: 45px;
+  
     padding: 10px;
 }
 
@@ -35,6 +40,7 @@
 .action {
     border: none;
     background: transparent;
+    color: #d2232a;
 }
 
 .pm-select {
@@ -49,7 +55,7 @@
 
 .pm-addBut {
     border: none;
-    background: #00264B;
+    background: #d2232a;
     color: white;
     height: 30px;
 }

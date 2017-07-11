@@ -3,7 +3,7 @@
     <div class="page-body">
         <div class="row">
             <div class="col-md-12">
-                <div style="background: #d1deef;padding:5px;height:40px">
+                <div style="background: #ededed;padding:5px;height:40px">
                     <!--<input class="ctg-textbox pull-left" placeholder="Search by state" [(ngModel)]="stateFil" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
                     <!--<input class="ctg-textbox pull-left" placeholder="Search by city" [(ngModel)]="cityFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
                     <!--<input class="ctg-textbox pull-left" placeholder="Company/Customer" [(ngModel)]="ccFil" style="margin-left:10px;" /><span class="pull-left glyphicon glyphicon-search serch-gly"></span>-->
@@ -32,8 +32,8 @@
                                 <li *ngFor="let item of allCC|filterC:ccFil:'cmpName'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="ccCheckEvent($event.target.checked,item.cmpName)" />{{item.cmpName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
-                                <input type="button" class="btn pm-addBut pull-right" data-toggle="dropdown" value="Apply" (click)="masterFilter()" />
+                                <input type="button" class="pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
+                                <input type="button" class="pm-addBut pull-right" data-toggle="dropdown" value="Apply" (click)="masterFilter()" />
                             </div>
                         </div>
                     </div>
@@ -57,8 +57,8 @@
                                 <li *ngFor="let item of allPlanners|filterC:plannerFil:'planner'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="plannerCheckEvent($event.target.checked,item.planner)" />{{item.planner}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
-                                <input type="button" data-toggle="dropdown" class="btn pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
+                                <input type="button" class="pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
+                                <input type="button" data-toggle="dropdown" class="pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
                             </div>
                         </div>
                     </div>
@@ -87,8 +87,8 @@
                                 <li *ngFor="let item of allStates|filterC:stateFil:'stateCode'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="stateCheckEvent($event.target.checked,item.stateCode)" />{{item.stateCode}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
-                                <input type="button" data-toggle="dropdown" class="btn pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
+                                <input type="button" class="pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
+                                <input type="button" data-toggle="dropdown" class="pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
                             </div>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
                                 <li *ngFor="let item of allCities|filterC:cityFil:'cityName'"><input type="checkbox" value="" [(ngModel)]="item.isSelected" (change)="cityCheckEvent($event.target.checked,item.cityName)" />{{item.cityName}}</li>
                             </ul>
                             <div class="div-center">
-                                <input type="button" class="btn pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
-                                <input type="button" data-toggle="dropdown" class="btn pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
+                                <input type="button" class="pm-addBut pm-whiteBut pull-left" data-toggle="dropdown" value="Cancel" />
+                                <input type="button" data-toggle="dropdown" class="pm-addBut pull-right" value="Apply" (click)="masterFilter()" />
                             </div>
                         </div>
                     </div>
@@ -275,11 +275,12 @@
                                     <div>
                                         <label>Company Name</label><br>
                                         <div class="dropdown pull-left pm-select-cont">
-                                            <button class="filters dropdown-toggle" type="button" data-toggle="dropdown">
+                                            
+                                            <button class="filters dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                                                 {{selectedCompany}}
                                                 <span class="caret"></span>
                                             </button>
-                                            <div class="dropdown-menu no-padding mulSel-dd">
+                                            <div class="dropdown-menu no-padding mulSel-dd" role="menu" aria-labelledby="menu1">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="ccFil">
                                                     <div class="input-group-btn">

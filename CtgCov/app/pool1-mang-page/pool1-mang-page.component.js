@@ -325,7 +325,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.stateSFlabel = this.choosenState.length + " state choosen";
+            this.stateSFlabel = this.choosenState.length + " state selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenState, temp[i].stateCode) != -1) {
                 }
@@ -348,7 +348,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.citySFlabel = this.choosenCity.length + " city choosen";
+            this.citySFlabel = this.choosenCity.length + " city selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCity, temp[i].cityName) != -1) {
                 }
@@ -370,7 +370,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.ccSFlabel = this.choosenCC.length + " company choosen";
+            this.ccSFlabel = this.choosenCC.length + " company selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCC, temp[i].companyName) != -1) {
                 }
@@ -392,7 +392,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.plannerSFlabel = this.choosenPlanner.length + " planner choosen";
+            this.plannerSFlabel = this.choosenPlanner.length + " planner selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenPlanner, temp[i].planner) != -1) {
                 }
@@ -469,8 +469,8 @@ var Pool1MangPageComponent = (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'text/plain' });
         var options = new http_1.RequestOptions({ headers: headers });
         var obj = { 'stateCode': "AR" };
-        var url1 = "http://192.168.1.37/TrailersCheck.asmx/GetCityByState?stateCode=AR";
-        var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCities";
+        var url1 = "http://192.168.1.86:81/TrailersCheck.asmx/GetCityByState?stateCode=AR";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllCities";
         this.http.get(url1).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCities data recieved "); _this.allCities = data; }, //For Success Response
         function (err) { console.log("getAllCities error recieved "); } //For Error Response
@@ -481,7 +481,7 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.getAllStates = function () {
         var _this = this;
         //alert("hi");
-        this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllStates").map(function (res) { return res.json(); })
+        this.http.get("http://192.168.1.86:81/TrailersCheck.asmx/GetAllStates").map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllStates data recieved"); _this.allStates = data; }, //For Success Response
         function (err) { console.log("getAllStates error recieved"); } //For Error Response
         );
@@ -491,7 +491,8 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.getAllCompany = function () {
         var _this = this;
         //alert("hi");
-        this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllCompanies").map(function (res) { return res.json(); })
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/GetCompanyForFilter";
+        this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCompany data recieved"); _this.allCC1 = data; _this.allCC = JSON.parse(JSON.stringify(_this.allCC1)); }, //For Success Response
         function (err) { console.log("getAllCompany error recieved"); } //For Error Response
         );
@@ -504,7 +505,7 @@ var Pool1MangPageComponent = (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'text/plain' });
         var options = new http_1.RequestOptions({ headers: headers });
         var obj = { 'csr': 0, 'csrCode': 0 };
-        var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCsr?csr=0&csrCode=0";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllCsr?csr=0&csrCode=0";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllCsr data recieved"); _this.allCsr = data; }, //For Success Response
         function (err) { console.log("getAllCsr error recieved"); } //For Error Response
@@ -513,7 +514,7 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.getAllPlanner = function () {
         var _this = this;
         //alert("hi");
-        var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPlanners?planner=0&plannerCode=0";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllPlanners?planner=0&plannerCode=0";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
@@ -524,7 +525,7 @@ var Pool1MangPageComponent = (function () {
     Pool1MangPageComponent.prototype.getAllPool = function () {
         var _this = this;
         //alert("hi");
-        var url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPools";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllPools";
         this.http.get(url).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlools data recieved"); _this.allPools = data; _this.ob.groups = data; _this.selectVarience(1); }, //For Success Response
         function (err) { console.log("getAllPlools error recieved"); } //For Error Response
@@ -573,7 +574,7 @@ var Pool1MangPageComponent = (function () {
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         //this.ob.groups.push(ele);
-        var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/insertPool";
         this.http.post(url, this.poolToEdit, options).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response
@@ -648,7 +649,7 @@ var Pool1MangPageComponent = (function () {
             this.data.push(data);
         }
         console.log("add: " + this.ob.groups);
-        var url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        var url = "http://192.168.1.86:81/TrailersCheck.asmx/insertPool";
         this.http.post(url, data, options).map(function (res) { return res.json(); })
             .subscribe(function (data) { console.log("getAllPlanner data recieved"); _this.allPlanners = data; }, //For Success Response
         function (err) { console.log("getAllPlanner error recieved"); } //For Error Response

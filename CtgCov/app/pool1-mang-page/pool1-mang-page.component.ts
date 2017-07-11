@@ -486,8 +486,8 @@ export class Pool1MangPageComponent {
         let headers = new Headers({ 'Content-Type': 'text/plain' });
         let options = new RequestOptions({ headers: headers });
         let obj = { 'stateCode': "AR" };
-        let url1 = "http://192.168.1.37/TrailersCheck.asmx/GetCityByState?stateCode=AR";
-        let url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCities";
+        let url1 = "http://192.168.1.86:81/TrailersCheck.asmx/GetCityByState?stateCode=AR";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllCities";
         this.http.get(url1).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllCities data recieved "); this.allCities = data; }, //For Success Response
@@ -499,7 +499,7 @@ export class Pool1MangPageComponent {
 
     private getAllStates() {
         //alert("hi");
-        this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllStates").map(res => res.json())
+        this.http.get("http://192.168.1.86:81/TrailersCheck.asmx/GetAllStates").map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllStates data recieved"); this.allStates = data; }, //For Success Response
             (err) => { console.log("getAllStates error recieved"); } //For Error Response
@@ -510,7 +510,8 @@ export class Pool1MangPageComponent {
 
     private getAllCompany() {
         //alert("hi");
-        this.http.get("http://192.168.1.37/TrailersCheck.asmx/GetAllCompanies").map(res => res.json())
+        let url="http://192.168.1.86:81/TrailersCheck.asmx/GetCompanyForFilter"
+        this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllCompany data recieved"); this.allCC1 = data; this.allCC = JSON.parse(JSON.stringify(this.allCC1)); }, //For Success Response
             (err) => { console.log("getAllCompany error recieved"); } //For Error Response
@@ -524,7 +525,7 @@ export class Pool1MangPageComponent {
         let headers = new Headers({ 'Content-Type': 'text/plain' });
         let options = new RequestOptions({ headers: headers });
         let obj = { 'csr': 0, 'csrCode': 0 };
-        let url = "http://192.168.1.37/TrailersCheck.asmx/GetAllCsr?csr=0&csrCode=0";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllCsr?csr=0&csrCode=0";
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllCsr data recieved"); this.allCsr = data; }, //For Success Response
@@ -534,7 +535,7 @@ export class Pool1MangPageComponent {
 
     private getAllPlanner() {
         //alert("hi");
-        let url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPlanners?planner=0&plannerCode=0";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllPlanners?planner=0&plannerCode=0";
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
@@ -546,7 +547,7 @@ export class Pool1MangPageComponent {
 
     private getAllPool() {
         //alert("hi");
-        let url = "http://192.168.1.37/TrailersCheck.asmx/GetAllPools";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/GetAllPools";
         this.http.get(url).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlools data recieved"); this.allPools = data; this.ob.groups = data; this.selectVarience(1); }, //For Success Response
@@ -615,7 +616,7 @@ export class Pool1MangPageComponent {
         console.log("add: " + this.selectedState);
         console.log("add: " + this.selectedCity);
         //this.ob.groups.push(ele);
-        let url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/insertPool";
         this.http.post(url, this.poolToEdit, options).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
@@ -702,7 +703,7 @@ export class Pool1MangPageComponent {
             this.data.push(data);
         }
         console.log("add: " + this.ob.groups);
-        let url = "http://localhost:3276/TrailersCheck.asmx/insertPool";
+        let url = "http://192.168.1.86:81/TrailersCheck.asmx/insertPool";
         this.http.post(url, data, options).map(res => res.json())
             .subscribe(
             (data) => { console.log("getAllPlanner data recieved"); this.allPlanners = data; }, //For Success Response
