@@ -325,7 +325,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.stateSFlabel = this.choosenState.length + " state selected";
+            this.stateSFlabel = this.choosenState.length + " state(s) selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenState, temp[i].stateCode) != -1) {
                 }
@@ -348,7 +348,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.citySFlabel = this.choosenCity.length + " city selected";
+            this.citySFlabel = this.choosenCity.length + " city(s) selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCity, temp[i].cityName) != -1) {
                 }
@@ -370,7 +370,7 @@ var Pool1MangPageComponent = (function () {
             return result;
         }
         else {
-            this.ccSFlabel = this.choosenCC.length + " company selected";
+            this.ccSFlabel = this.choosenCC.length + " company(s) selected";
             for (var i = 0; i < temp.length; i++) {
                 if (this.inArray(this.choosenCC, temp[i].companyName) != -1) {
                 }

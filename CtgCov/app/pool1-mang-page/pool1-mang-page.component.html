@@ -14,8 +14,8 @@
                     </select>
 
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <button class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restoreccList()" >{{ccSFlabel}}
-                        <span class="caret"></span></button>
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restoreccList()" value={{ccSFlabel}}/>
+                        <span class="caret pointer" data-toggle="dropdown"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
                             <div class="input-group">
@@ -39,8 +39,8 @@
                     </div>
 
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <button class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restorePlannerList()" >{{plannerSFlabel}}
-                        <span class="caret"></span></button>
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restorePlannerList()" value={{plannerSFlabel}}/>
+                            <span class="caret pointer" data-toggle="dropdown"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
                             <div class="input-group">
@@ -69,8 +69,8 @@
                     </select>-->
 
                     <div class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
-                        <button class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restoreStateList()" >{{stateSFlabel}}
-                        <span class="caret"></span></button>
+                        <input class="filters dropdown-toggle" type="button" data-toggle="dropdown"  (click)="restoreStateList()" value={{stateSFlabel}}/>
+                            <span class="caret pointer" data-toggle="dropdown"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
                             <div class="input-group">
                                 <input type="text" class="form-control search-box" placeholder="Search" [(ngModel)]="stateFil">
@@ -95,7 +95,7 @@
 
                     <div *ngIf="choosenState.length>0" class="dropdown pull-left pm-select-cont" style="margin-left:10px;">
                         <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{citySFlabel}} (click)="restoreCityList()" />
-                        <span class="caret"></span>
+                        <span class="caret pointer" data-toggle="dropdown"></span>
                         <div class="dropdown-menu no-padding mulSel-dd">
 
                             <div class="input-group">
