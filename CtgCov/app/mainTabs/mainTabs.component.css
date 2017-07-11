@@ -5,12 +5,11 @@
 
 .selected {
     color: white !important;
-    background: #00264B;
+    background: #d2232a;
 }
 
 .selected-a{
     color: white !important;
-    background: #00264B;
 }
 .tab-li-last {
     float: left;
@@ -21,12 +20,15 @@
     float: left;
     padding-left: 10px;
     padding-right: 10px;
-    border-right: 2px solid #00264B;
+    border-right: 2px solid #dedede;
 }
 
 a {
     text-decoration: none;
-    color:grey;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
 }
 
 .tabContainer {

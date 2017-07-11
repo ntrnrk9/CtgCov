@@ -47,3 +47,12 @@
     text-align: left;
     border: none;
 }
+
+.close{
+    opacity:1;
+    color:white;
+}
+
+.normalfnt{
+    font-weight:normal;
+}

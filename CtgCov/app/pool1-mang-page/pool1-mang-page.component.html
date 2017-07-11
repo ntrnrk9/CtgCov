@@ -213,7 +213,7 @@
                         </tr>-->
                         <!--<tr *ngFor="let item of data| filterC:cityFil:'city'| filterC:stateFil:'state'| filterC:ccFil:'company'">
                         -->
-                        <ng-container *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }">
+                        <ng-container *ngFor="let i=index;let item of data | paginate: { itemsPerPage: 10, currentPage: p }">
                             <tr>
                                 <td style="text-align:center">
                                     <span>{{item.stateCode}}</span>
@@ -300,16 +300,16 @@
                                 <div class="row pu-row">
                                     <div class="col-md-6 orPad">
                                         <label>State</label><br />
-                                        <input class="no-padding col-md-12" readonly placeholder={{selectedState}} />
+                                        <input class="no-padding col-md-12" readonly placeholder={{selectedState}} type="text"/>
                                     </div>
                                     <div class="col-md-6 olPad">
                                         <label>City</label><br />
-                                        <input class="no-padding col-md-12" readonly placeholder={{selectedCity}} />
+                                        <input class="no-padding col-md-12" readonly placeholder={{selectedCity}} type="text"/>
                                     </div>
                                 </div>
                                 <div class="row pu-row">
                                     <div class="col-md-6 orPad">
-                                        <label>Csr</label><br />
+                                        <label>CSR</label><br />
                                         <searchfilter [items]="allCsr" [(selectedItem)]="selectedCsr" [key]="'csrName'"></searchfilter>
                                     </div><div class="col-md-6 olPad">
                                         <label>Planner</label><br />
@@ -318,7 +318,7 @@
                                 </div><div class="row pu-row">
                                     <div>
                                         <label>Required</label><br>
-                                        <input class="no-padding col-md-12" [(ngModel)]="reqPoolQat" />
+                                        <input class="no-padding col-md-12" [(ngModel)]="reqPoolQat" type="text"/>
                                     </div>
                                 </div>
                                 <!--<div class="row pu-row">
@@ -333,8 +333,8 @@
                             </div>
                         </div>
                         <div class="modal-footer page-footer">
-                            <button type="button" class="btn btn-default" style="height:30px" (click)="cancelAdd()" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn pm-addBut" data-dismiss="modal" (click)="add()">Save</button>
+                            <button type="button" class="pm-whiteBut" style="height:30px" (click)="cancelAdd()" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="pm-addBut" data-dismiss="modal" (click)="add()">Save</button>
                         </div>
                     </div>
 
@@ -354,18 +354,18 @@
                         <div class="modal-body">
                             <div class="modal-div">
                                 <div>
-                                    <label>TMW :</label>
-                                    <label>{{poolToEdit.pool}}</label><br>
                                     <label>Company Name :</label>
-                                    <label>{{poolToEdit.company}}</label><br>
+                                    <label class="normalfnt">{{poolToEdit.companyName}}</label><br>
+                                    <label>TMW :</label>
+                                    <label class="normalfnt">{{poolToEdit.cmpID}}</label><br>
                                     <label>State :</label>
-                                    <label>{{poolToEdit.state}}, </label>
+                                    <label class="normalfnt">{{poolToEdit.stateCode}}, </label>
                                     <label>City :</label>
-                                    <label>{{poolToEdit.city}}</label>
+                                    <label class="normalfnt">{{poolToEdit.cityName}}</label>
                                 </div>
                                 <div class="row pu-row">
                                     <div class="col-md-6 orPad">
-                                        <label>Csr</label><br />
+                                        <label>CSR</label><br />
                                         <div class="dropdown pull-left pm-select-cont" style="width:100%;border:1px solid silver;">
                                             <input class="filters dropdown-toggle" type="button" data-toggle="dropdown" value={{selectedCsr}} style="width:91%" />
                                             <span class="caret"></span>
@@ -410,17 +410,17 @@
                                         <label>Trailer Type</label><br />
                                         <input class="no-padding col-md-12" />
                                     </div>-->
-                                    <div class="col-md-6 olPad">
+                                    <div class="col-md-12 no-padding">
                                         <label>Required Pool</label><br />
-                                        <input class="no-padding col-md-12" [(ngModel)]="updateReqPool" />
+                                        <input class="no-padding col-md-12" [(ngModel)]="updateReqPool" type="text"/>
                                     </div>
                                     <!--<button class="pull-right add-trType"><span class="glyphicon glyphicon-plus-sign blue-but"></span></button>-->
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer page-footer">
-                            <button type="button" style="height:30px" class="btn btn-default" (click)="cancelUpdatePool()" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn pm-addBut" data-dismiss="modal" (click)="updatePool()">Save</button>
+                            <button type="button" style="height:30px" class="pm-whiteBut" (click)="cancelUpdatePool()" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="pm-addBut" data-dismiss="modal" (click)="updatePool()">Save</button>
                         </div>
                     </div>
 
